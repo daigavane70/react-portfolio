@@ -1,0 +1,17 @@
+.home{
+    position: relative;
+    height: 600px;
+    width: 100%;
+    background: url('../assets/bg.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: radial-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0));  
+}

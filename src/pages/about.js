@@ -41,7 +41,7 @@ export default function About() {
           <div>Resume</div>
           <img
             className="h-6 w-6"
-            src="https://cdn-icons.flaticon.com/png/512/2990/premium/2990159.png?token=exp=1642415385~hmac=a53f933860c96441976a13290a73535b"
+            src='https://cdn-icons.flaticon.com/png/512/2985/premium/2985013.png?token=exp=1642434579~hmac=18cf9c1d3c76042240f856228d04285c'
             alt=""
           ></img>
         </a>

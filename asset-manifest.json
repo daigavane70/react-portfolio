@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/daigavane70/react-porfolio/static/css/main.c0c1bbd9.css",
+    "main.js": "/daigavane70/react-porfolio/static/js/main.1b71eb5a.js",
+    "static/media/bg.jpg": "/daigavane70/react-porfolio/static/media/bg.05e432b11340eb96dc81.jpg",
+    "static/media/xenia.png": "/daigavane70/react-porfolio/static/media/xenia.6f7e117c2836527007c5.png",
+    "static/media/tradenza.png": "/daigavane70/react-porfolio/static/media/tradenza.20caa74e662595cf4ab6.png",
+    "static/media/editorial.png": "/daigavane70/react-porfolio/static/media/editorial.2878293136d1f2fcb312.png",
+    "static/media/rebuild-hub.png": "/daigavane70/react-porfolio/static/media/rebuild-hub.c43a2fb05919e8957b66.png",
+    "static/media/profilepic.jpg": "/daigavane70/react-porfolio/static/media/profilepic.cf686487cc9d972be4dc.jpg",
+    "index.html": "/daigavane70/react-porfolio/index.html",
+    "main.c0c1bbd9.css.map": "/daigavane70/react-porfolio/static/css/main.c0c1bbd9.css.map",
+    "main.1b71eb5a.js.map": "/daigavane70/react-porfolio/static/js/main.1b71eb5a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c0c1bbd9.css",
+    "static/js/main.1b71eb5a.js"
+  ]
+}

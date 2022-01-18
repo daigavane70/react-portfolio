@@ -6,6 +6,7 @@
 
 * {
   font-family: Sora;
+  scroll-behavior: smooth;
 }
 
 .portfolio {

@@ -56,7 +56,7 @@ const projects = [
         icon: (
           <img
             alt=""
-            src="https://cdn-icons.flaticon.com/png/512/2985/premium/2985013.png?token=exp=1642434579~hmac=18cf9c1d3c76042240f856228d04285c"
+            src="https://img.icons8.com/ios-filled/50/000000/link--v1.png"
             className="h-full"
           ></img>
         ),
@@ -74,7 +74,7 @@ const projects = [
         icon: (
           <img
             alt=""
-            src='https://cdn-icons.flaticon.com/png/512/2985/premium/2985013.png?token=exp=1642434579~hmac=18cf9c1d3c76042240f856228d04285c'
+            src="https://img.icons8.com/ios-filled/50/000000/link--v1.png"
             className="h-full"
           ></img>
         ),
@@ -95,7 +95,7 @@ const projects = [
         icon: (
           <img
             alt=""
-            src='https://cdn-icons.flaticon.com/png/512/2985/premium/2985013.png?token=exp=1642434579~hmac=18cf9c1d3c76042240f856228d04285c'
+            src="https://img.icons8.com/ios-filled/50/000000/link--v1.png"
             className="h-full"
           ></img>
         ),
@@ -116,7 +116,7 @@ const projects = [
         icon: (
           <img
             alt=""
-            src='https://cdn-icons.flaticon.com/png/512/2985/premium/2985013.png?token=exp=1642434579~hmac=18cf9c1d3c76042240f856228d04285c'
+            src="https://img.icons8.com/ios-filled/50/000000/link--v1.png"
             className="h-full"
           ></img>
         ),

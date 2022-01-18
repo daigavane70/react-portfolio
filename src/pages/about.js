@@ -31,17 +31,27 @@ export default function About() {
         <div className="py-10 flex items-center space-x-4 justify-center">
           {social.map((link) => {
             return (
-              <a href={link.link} target={'_blank'} rel='noreferrer' className="relative rounded-full">
+              <a
+                href={link.link}
+                target={'_blank'}
+                rel="noreferrer"
+                className="relative rounded-full"
+              >
                 <img src={link.icon} className="h-10 w-10" alt=""></img>
               </a>
             );
           })}
         </div>
-        <a className="p-2 cursor-pointer rounded-lg relative px-10 w-max flex items-center m-auto space-x-4 border bg-slate-200" href={'https://drive.google.com/file/d/1y07DZdv7oPGucnDmmwLa_DWzNCjbxTyY/view'} target={'_blanck'} rel='noreferrer'>
+        <a
+          className="p-2 cursor-pointer rounded-lg relative px-10 w-max flex items-center m-auto space-x-4 border bg-slate-200"
+          href={'https://drive.google.com/file/d/1y07DZdv7oPGucnDmmwLa_DWzNCjbxTyY/view'}
+          target={'_blanck'}
+          rel="noreferrer"
+        >
           <div>Resume</div>
           <img
             className="h-6 w-6"
-            src='https://cdn-icons.flaticon.com/png/512/2985/premium/2985013.png?token=exp=1642434579~hmac=18cf9c1d3c76042240f856228d04285c'
+            src="https://img.icons8.com/material-outlined/48/000000/link--v1.png"
             alt=""
           ></img>
         </a>

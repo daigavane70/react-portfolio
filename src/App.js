@@ -7,6 +7,7 @@ import About from './pages/about';
 import Experience from './pages/experience';
 import Home from './pages/home';
 import Projects from './pages/projects';
+import Resume from './pages/resume';
 import Skills from './pages/skills';
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
       <Projects></Projects>
       <Skills></Skills>
       <About></About>
+      <Resume></Resume>
       <Footer></Footer>
     </div>
   );

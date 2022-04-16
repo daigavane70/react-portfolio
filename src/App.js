@@ -19,7 +19,7 @@ function App() {
   
     setTimeout(() => {
       disablePreloader();
-    }, 3000);
+    }, 5000);
 
   }, []);
 

@@ -17,9 +17,9 @@ function App() {
       loader.style.display = 'none';
     }
   
-    setTimeout(() => {
-      disablePreloader();
-    }, 3000);
+    // setTimeout(() => {
+    //   disablePreloader();
+    // }, 3000);
 
   }, []);
 

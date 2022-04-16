@@ -136,6 +136,7 @@ footer .counter {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   top: 0px;
   left: 0px;
   height: 100vh;

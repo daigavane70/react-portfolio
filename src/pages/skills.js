@@ -24,6 +24,18 @@ export default function Skills() {
 
 const skills = [
   {
+    icon: <i class="devicon-spring-plain colored"></i>,
+    skill: 'Spring'
+  },
+  {
+    icon: <i class="devicon-nodejs-plain colored"></i>,
+    skill: 'Node JS',
+  },
+  {
+    icon: <i class="devicon-express-original colored"></i>,
+    skill: 'Express JS',
+  },
+  {
     icon: <i class="devicon-react-original colored"></i>,
     skill: 'React',
   },
@@ -50,14 +62,6 @@ const skills = [
   {
     icon: <i class="devicon-css3-plain colored"></i>,
     skill: 'CSS',
-  },
-  {
-    icon: <i class="devicon-nodejs-plain colored"></i>,
-    skill: 'Node JS',
-  },
-  {
-    icon: <i class="devicon-express-original colored"></i>,
-    skill: 'Express JS',
   },
   // {
   //   icon: '',

@@ -1,5 +1,3 @@
-import ResumeFile from '../assets/Vedant_Daigavane_Resume.pdf';
-
 export default function Resume() {
   return (
     <></>

@@ -25,7 +25,11 @@ export default function Skills() {
 const skills = [
   {
     icon: <i class="devicon-spring-plain colored"></i>,
-    skill: 'Spring'
+    skill: 'Spring',
+  },
+  {
+    icon: <i class="devicon-apachekafka-original colored"></i>,
+    skill: 'Apache Kafka',
   },
   {
     icon: <i class="devicon-nodejs-plain colored"></i>,

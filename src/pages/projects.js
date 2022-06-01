@@ -3,6 +3,7 @@ import Xenia from '../assets/xenia.png';
 import Editorial from '../assets/editorial.png';
 import RebuildHub from '../assets/rebuild-hub.png';
 import Tradenza from '../assets/tradenza.png';
+import OJ from '../assets/oj.png';
 
 export default function Projects() {
   return (
@@ -15,7 +16,7 @@ export default function Projects() {
         <div className="grid md:grid-cols-4 gap-4">
           {projects.map((proj) => {
             return (
-              <div className="p-5 shadow-md space-y-4 bg-white">
+              <div className="p-4 shadow-md space-y-4 bg-white">
                 <div className="h-32 overflow-hidden border-b relative">
                   <img alt="" src={proj.img} className="w-full absolute left-0 my-auto "></img>
                 </div>
@@ -47,6 +48,27 @@ export default function Projects() {
 }
 
 const projects = [
+  {
+    title: "Online Judge",
+    details: "An Online Judge platform whose primary goal was to host a coding contest and calculate real-time rankings on the basis of submissions made by the contestants. We have used ReactJS, and Redux to develop the client project. For the client-side we have used NodeJS, ExpressJS for API development, MongoDB as a database, Redis-Bull to maintain queue, docker for containerization of project, and Judge0 as code execution engine.",
+    img: OJ,
+    links: [
+      {
+        icon: (
+          <img
+            alt=""
+            src="https://img.icons8.com/ios-filled/50/000000/link--v1.png"
+            className="h-full"
+          ></img>
+        ),
+        link: "https://oj-client.vercel.app/"
+      },
+      {
+        icon: <i class="devicon-github-original"></i>,
+        link: "https://github.com/PCSB-Web-Team/online-judge-server",
+      },
+    ]
+  },
   {
     title: 'Xenia Website',
     details: "Built a website from scratch for PCSB's annual event Xenia.",

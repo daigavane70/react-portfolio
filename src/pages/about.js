@@ -1,5 +1,7 @@
 import React from 'react';
 import ProfilePic from '../assets/profilepic.jpg';
+// import ProfilePic1 from '../assets/profilepic1.jpeg';
+import ProfilePic1 from '../assets/profile2.jpeg';
 // import ResumeFile from '../assets/Vedant_Daigavane_Resume.pdf';
 
 export default function About() {
@@ -11,7 +13,7 @@ export default function About() {
 
       <div className="md:flex items-center space-y-8 md:space-y-0">
         <div className="md:order-last basis-1/3 h-full">
-          <img src={ProfilePic} className="rounded-full h-52 w-52 mx-auto" alt=""></img>
+          <img src={ProfilePic1} className="rounded-full h-52 w-52 mx-auto" alt=""></img>
         </div>
         <div className="basis-2/3 space-y-4">
           <span className="text-gray-500 text-xl">Hi, I am </span>

@@ -40,6 +40,10 @@ const skills = [
     skill: 'Express JS',
   },
   {
+    icon: <i class="devicon-nginx-original colored"></i>,
+    skill: "Nginx"
+  },
+  {
     icon: <i class="devicon-react-original colored"></i>,
     skill: 'React',
   },

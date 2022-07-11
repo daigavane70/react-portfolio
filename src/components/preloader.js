@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react/cjs/react.production.min';
+import Goku1 from "../assets/goku1.png";
 
 export default function Preloader() {
   const quotes = [
@@ -12,12 +13,15 @@ export default function Preloader() {
   const random = Math.floor(Math.random()*(quotes.length));
   return (
     <div class="preloader space-y-2">
-      <div class="lds-ripple">
-        <div></div>
-        <div></div>
+      <div className="w-32 text-center goku-bg">
+        <img src={Goku1} className=" invert"></img>
       </div>
       <div className='text-gray-200 font-light max-w-[400px]'>“{quotes[random].quote}”</div>
       <div className='text-sky-400 font-light max-w-[400px] text-sm'> - {quotes[random].author}</div>
+      {/* <div className="lds-ripple">
+        <div></div>
+        <div></div>
+      </div> */}
     </div>
   );
 }

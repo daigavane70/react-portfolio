@@ -203,3 +203,21 @@ footer .counter {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+.goku-bg{
+  padding: 10px;
+  overflow: hidden;
+  border-radius: 10px;
+  animation: movebg 1s linear infinite;
+  transition: ease-in-out;
+  background: linear-gradient(to right, black, rgba(80, 243, 255, 0.472), black);
+}
+
+@keyframes movebg {
+  0% {
+    background-position-x: -8rem;
+  }
+  100% {
+    background-position: 0rem;
+  }
+}

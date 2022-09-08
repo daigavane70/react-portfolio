@@ -10,11 +10,11 @@ import Home from './pages/home';
 import Projects from './pages/projects';
 import Resume from './pages/resume';
 import Skills from './pages/skills';
-import Music from './assets/bg.mp3';
-import useSound from 'use-sound';
+// import Music from './assets/bg.mp3';
+// import useSound from 'use-sound';
 
 function App() {
-  const [playSound] = useSound(Music, { volume: 0.2 });
+  // const [playSound] = useSound(Music, { volume: 0 });
 
   playSound();
 

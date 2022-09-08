@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useState } from 'react/cjs/react.production.min';
 import './App.css';
 import Footer from './components/footer';
 import Navbar from './components/navbar';
@@ -9,18 +10,22 @@ import Home from './pages/home';
 import Projects from './pages/projects';
 import Resume from './pages/resume';
 import Skills from './pages/skills';
+import Music from './assets/bg.mp3';
+import useSound from 'use-sound';
 
 function App() {
+  const [playSound] = useSound(Music, { volume: 0.2 });
+
+  playSound();
+
   useEffect(() => {
     function disablePreloader() {
       const loader = document.getElementsByClassName('preloader')[0];
       loader.style.display = 'none';
     }
-  
     setTimeout(() => {
       disablePreloader();
     }, 5000);
-
   }, []);
 
   return (

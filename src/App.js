@@ -16,7 +16,7 @@ import Skills from './pages/skills';
 function App() {
   // const [playSound] = useSound(Music, { volume: 0 });
 
-  playSound();
+  // playSound();
 
   useEffect(() => {
     function disablePreloader() {

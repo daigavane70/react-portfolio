@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import { useState } from 'react/cjs/react.production.min';
 import './App.css';
 import Footer from './components/footer';
 import Navbar from './components/navbar';
@@ -25,7 +24,7 @@ function App() {
     }
     setTimeout(() => {
       disablePreloader();
-    }, 5000);
+    }, 3000);
   }, []);
 
   return (

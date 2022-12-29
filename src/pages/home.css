@@ -2,7 +2,7 @@
     position: relative;
     height: 600px;
     width: 100%;
-    background: url('../assets/bg.jpg');
+    background-image: url('https://lh4.googleusercontent.com/34E-s6GhFAk7nuEXz4re1TRf_ZjAfiyLLg3rH0KRmDeYmd97RIidUbI3KdxeLYjIZeQ=w2400');
     background-position: center;
     background-size: cover;
 }

@@ -20,12 +20,7 @@ export default function About() {
           <div className="text-cyan-500 text-4xl font-bold">Vedant Daigavane</div>
           <div className="text-xl text-gray-500 font-semibold">Passionate Coder & Trader</div>
           <div className="font-light text-gray-400">
-            I am a highly enthusiastic and competitive person who likes being around people who like
-            to test my limits and I try to push theirs as well. I love to acquire new skills and
-            share my knowledge. Taking up complex challenges is my passion. I don't like to stick to
-            one technique for a longer time and quickly look for other ways to do a task. I strongly
-            believe that being the jack of all trades and master of none is always better than being
-            master of one.
+            I am a highly enthusiastic and competitive person who enjoys being around individuals who challenge my limits, and I, in turn, strive to push them as well. I have a passion for acquiring new skills and sharing my knowledge. Taking on complex challenges is a personal passion of mine. I prefer not to adhere to a single technique for an extended period and instead proactively seek alternative approaches to tasks. I strongly believe that being a jack of all trades and master of none is often better than being a master of one.
           </div>
         </div>
       </div>

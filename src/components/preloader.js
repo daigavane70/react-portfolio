@@ -3,8 +3,6 @@ import Goku1 from '../assets/goku1.png';
 
 export default function Preloader() {
   const quotes = [
-    // {quote: "Programming isn't about what you know; it's about what you can figure out.", author: "Chris Pine"},
-    // {quote: "Life is like riding a bicycle. To keep your balance, you must keep moving.", author: "Albert Einstein"},
     {
       quote:
         "It's unbelievable how much you don't know about the game you've been playing all your life.",
@@ -27,10 +25,6 @@ export default function Preloader() {
         {' '}
         - {quotes[random].author}
       </div>
-      {/* <div className="lds-ripple">
-        <div></div>
-        <div></div>
-      </div> */}
     </div>
   );
 }

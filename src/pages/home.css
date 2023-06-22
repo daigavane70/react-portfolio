@@ -1,17 +1,17 @@
-.home{
-    position: relative;
-    height: 600px;
-    width: 100%;
-    background-image: url('https://lh4.googleusercontent.com/34E-s6GhFAk7nuEXz4re1TRf_ZjAfiyLLg3rH0KRmDeYmd97RIidUbI3KdxeLYjIZeQ=w2400');
-    background-position: center;
-    background-size: cover;
+.home {
+  position: relative;
+  height: 600px;
+  width: 100%;
+  background-image: url('https://lh4.googleusercontent.com/34E-s6GhFAk7nuEXz4re1TRf_ZjAfiyLLg3rH0KRmDeYmd97RIidUbI3KdxeLYjIZeQ=w2400');
+  background-position: center;
+  background-size: cover;
 }
 
 .overlay {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    background: radial-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0));  
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: radial-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0));
 }

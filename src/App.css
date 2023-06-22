@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -204,7 +204,7 @@ footer .counter {
   background: #555;
 }
 
-.goku-bg{
+.goku-bg {
   padding: 10px;
   overflow: hidden;
   border-radius: 10px;

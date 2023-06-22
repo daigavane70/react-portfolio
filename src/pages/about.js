@@ -1,8 +1,4 @@
 import React from 'react';
-// import ProfilePic from '../assets/profilepic.jpg';
-// import ProfilePic1 from '../assets/profilepic1.jpeg';
-// import ProfilePic1 from '../assets/profile2.jpeg';
-// import ResumeFile from '../assets/Vedant_Daigavane_Resume.pdf';
 
 export default function About() {
   return (
@@ -13,7 +9,13 @@ export default function About() {
 
       <div className="md:flex items-center space-y-8 md:space-y-0">
         <div className="md:order-last basis-1/3 h-full">
-          <img src={"https://lh6.googleusercontent.com/2Bug3yrRpYCbr0yp4hQ6BwWAvAziYC7PV_FRxpi5vup0OD1vWOl9gWaUSd6Q59Gl2wI=w2400"} className="rounded-full h-52 w-52 mx-auto" alt=""></img>
+          <img
+            src={
+              'https://lh6.googleusercontent.com/2Bug3yrRpYCbr0yp4hQ6BwWAvAziYC7PV_FRxpi5vup0OD1vWOl9gWaUSd6Q59Gl2wI=w2400'
+            }
+            className="rounded-full h-52 w-52 mx-auto"
+            alt=""
+          ></img>
         </div>
         <div className="basis-2/3 space-y-4">
           <span className="text-gray-500 text-xl">Hi, I am </span>

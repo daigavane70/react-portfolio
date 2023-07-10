@@ -58,8 +58,7 @@ const experiences = [
     ],
     date: 'Jan 2022 - Present',
     img: 'https://lever-client-logos.s3.us-west-2.amazonaws.com/eb7738e7-d908-42f5-97da-61b28e53ce73-1631634736627.png',
-    companyUrl: "https://upstox.com/"
-
+    companyUrl: 'https://upstox.com/',
   },
   {
     position: 'Software Developer Intern',
@@ -68,7 +67,8 @@ const experiences = [
       'Worked on a Health-Tech application, worked on the onbaording module in which I used Redux Toolkit for managing the data flow of multiple forms. Used NextJs + Tailwind CSS + Storybook for creating and testing frontend components.',
     ],
     date: 'Nov 21 - Jan 22',
-    img: '',
+    img: 'https://quoppo.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F1257ac6f-9946-42db-b9e2-f3cc144c8f6f%2Flogo-quoppo.svg?table=block&id=4cb5c073-3ad4-4778-917f-36d5fbf14a96&spaceId=011a789e-d422-42dc-b920-56a90df1c604&userId=&cache=v2',
+    companyUrl: 'https://quoppo.notion.site/',
   },
   {
     position: 'Full Stack Developer Intern',
@@ -79,7 +79,7 @@ const experiences = [
       " Tackled some real world problems by using advance React JS and Redux concepts. The platform is built to help top MNC's in the world.",
     ],
     date: 'Aug 21 - Oct 21',
-    img: 'https://media-exp1.licdn.com/dms/image/C4E0BAQFOaII-vKob5Q/company-logo_200_200/0/1638201461455?e=1661990400&v=beta&t=nLDkxLlDXDgjwiu-z7PeIg1oKB1YCIcnzIeZDvW7dNk',
-    companyUrl: "http://www.sorceotech.com/"
+    img: 'https://drive.google.com/uc?export=view&id=1KZ58TeoC6spgG2HIJUwE8OTCyqR8bw-Q',
+    companyUrl: 'http://www.sorceotech.com/',
   },
 ];

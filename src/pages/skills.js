@@ -41,7 +41,7 @@ const skills = [
   },
   {
     icon: <i class="devicon-nginx-original colored"></i>,
-    skill: "Nginx"
+    skill: 'Nginx',
   },
   {
     icon: <i class="devicon-react-original colored"></i>,

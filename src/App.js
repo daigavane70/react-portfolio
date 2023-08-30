@@ -26,7 +26,7 @@ function App() {
 
   return (
     <>
-      <Preloader></Preloader>
+      {/* <Preloader></Preloader> */}
       <Navbar />
       <Routes>
         <Route

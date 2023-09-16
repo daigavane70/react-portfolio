@@ -1,5 +1,5 @@
 import React from 'react';
-import Goku1 from '../assets/goku1.png';
+import Goku1 from '../assets/goku1.webp';
 
 export default function Preloader() {
   const quotes = [

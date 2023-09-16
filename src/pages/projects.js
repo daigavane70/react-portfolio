@@ -1,9 +1,9 @@
 import React from 'react';
-import Xenia from '../assets/xenia.png';
-import Editorial from '../assets/editorial.png';
-import RebuildHub from '../assets/rebuild-hub.png';
-import Tradenza from '../assets/tradenza.png';
-import OJ from '../assets/oj.png';
+import Xenia from '../assets/xenia.webp';
+import Editorial from '../assets/editorial.webp';
+import RebuildHub from '../assets/rebuild-hub.webp';
+import Tradenza from '../assets/tradenza.webp';
+import OJ from '../assets/oj.webp';
 
 export default function Projects() {
   return (
@@ -49,8 +49,9 @@ export default function Projects() {
 
 const projects = [
   {
-    title: "Online Judge",
-    details: "An Online Judge platform whose primary goal was to host a coding contest and calculate real-time rankings on the basis of submissions made by the contestants. We have used ReactJS, and Redux to develop the client project. For the client-side we have used NodeJS, ExpressJS for API development, MongoDB as a database, Redis-Bull to maintain queue, docker for containerization of project, and Judge0 as code execution engine.",
+    title: 'Online Judge',
+    details:
+      'An Online Judge platform whose primary goal was to host a coding contest and calculate real-time rankings on the basis of submissions made by the contestants. We have used ReactJS, and Redux to develop the client project. For the client-side we have used NodeJS, ExpressJS for API development, MongoDB as a database, Redis-Bull to maintain queue, docker for containerization of project, and Judge0 as code execution engine.',
     img: OJ,
     links: [
       {
@@ -61,13 +62,13 @@ const projects = [
             className="h-full"
           ></img>
         ),
-        link: "https://oj-client.vercel.app/"
+        link: 'https://oj-client.vercel.app/',
       },
       {
         icon: <i class="devicon-github-original"></i>,
-        link: "https://github.com/PCSB-Web-Team/online-judge-server",
+        link: 'https://github.com/PCSB-Web-Team/online-judge-server',
       },
-    ]
+    ],
   },
   {
     title: 'Xenia Website',

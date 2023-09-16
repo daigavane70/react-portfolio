@@ -1,4 +1,5 @@
 import React from 'react';
+import { getDriveUrlById } from '../utils';
 
 export default function Experience() {
   return (
@@ -8,7 +9,7 @@ export default function Experience() {
       </div>
       {experiences.map((exp) => {
         return (
-          <div className="w-full shadow-md p-5 rounded-lg mb-10">
+          <div className="w-full shadow-md px-4 py-8 rounded-lg mb-10">
             <div className=" grid md:grid-cols-4 gap-4 md:order-2">
               <div
                 className="w-full h-40 flex items-center justify-center my-auto hover:scale-105 transform transition ease-in cursor-pointer"
@@ -29,7 +30,7 @@ export default function Experience() {
                   <div className="text-xl text-slate-500 ">{exp.position}</div>
                   <div className=" text-slate-400">{exp.date}</div>
                 </div>
-                <div className=" text-gray-400 font-extralight text-sm">
+                <div className=" text-gray-600 font-light text-sm px-4">
                   <ul className="list-disc">
                     {exp.details.map((detail) => (
                       <li>{detail}</li>
@@ -83,7 +84,7 @@ const experiences = [
       'Built a globally-serving platform catering to top multinational corporations.',
     ],
     date: 'Aug 21 - Oct 21',
-    img: 'https://drive.google.com/uc?export=view&id=1KZ58TeoC6spgG2HIJUwE8OTCyqR8bw-Q',
+    img: getDriveUrlById('1KZ58TeoC6spgG2HIJUwE8OTCyqR8bw-Q'),
     companyUrl: 'http://www.sorceotech.com/',
   },
 ];

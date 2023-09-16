@@ -1,4 +1,5 @@
 import React from 'react';
+import { getDriveUrlById } from '../utils';
 
 export default function About() {
   return (
@@ -10,9 +11,7 @@ export default function About() {
       <div className="md:flex items-center space-y-8 md:space-y-0">
         <div className="md:order-last basis-1/3 h-full">
           <img
-            src={
-              'https://lh6.googleusercontent.com/2Bug3yrRpYCbr0yp4hQ6BwWAvAziYC7PV_FRxpi5vup0OD1vWOl9gWaUSd6Q59Gl2wI=w2400'
-            }
+            src={getDriveUrlById('1zMOinHcdi5Jx1C6yAkU8P9ZGZz3gXFXp')}
             className="rounded-full h-52 w-52 mx-auto"
             alt=""
           ></img>
@@ -21,8 +20,14 @@ export default function About() {
           <span className="text-gray-500 text-xl">Hi, I am </span>
           <div className="text-cyan-500 text-4xl font-bold">Vedant Daigavane</div>
           <div className="text-xl text-gray-500 font-semibold">Passionate Coder & Trader</div>
-          <div className="font-light text-gray-400">
-            I am a highly enthusiastic and competitive person who enjoys being around individuals who challenge my limits, and I, in turn, strive to push them as well. I have a passion for acquiring new skills and sharing my knowledge. Taking on complex challenges is a personal passion of mine. I prefer not to adhere to a single technique for an extended period and instead proactively seek alternative approaches to tasks. I strongly believe that being a jack of all trades and master of none is often better than being a master of one.
+          <div className="font-light text-gray-400 text-justify">
+            I am a highly enthusiastic and competitive person who enjoys being around individuals
+            who challenge my limits, and I, in turn, strive to push them as well. I have a passion
+            for acquiring new skills and sharing my knowledge. Taking on complex challenges is a
+            personal passion of mine. I prefer not to adhere to a single technique for an extended
+            period and instead proactively seek alternative approaches to tasks. I strongly believe
+            that being a jack of all trades and master of none is often better than being a master
+            of one.
           </div>
         </div>
       </div>

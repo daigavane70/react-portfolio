@@ -11,7 +11,7 @@ export default function About() {
       <div className="md:flex items-center space-y-8 md:space-y-0">
         <div className="md:order-last basis-1/3 h-full">
           <img
-            src={getDriveUrlById('1zMOinHcdi5Jx1C6yAkU8P9ZGZz3gXFXp')}
+            src={getDriveUrlById('1-xBANAobBeQV1aK5WlUmj4zh1haGu2HD')}
             className="rounded-full h-52 w-52 mx-auto"
             alt=""
           ></img>

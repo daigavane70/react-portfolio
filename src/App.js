@@ -11,7 +11,6 @@ import BlogsInfo from './pages/blogsInfo';
 import Experience from './pages/experience';
 import Home from './pages/home';
 import Projects from './pages/projects';
-import Resume from './pages/resume';
 import Skills from './pages/skills';
 
 function App() {
@@ -40,7 +39,6 @@ function App() {
               <Blogs></Blogs>
               <Skills></Skills>
               <About></About>
-              <Resume></Resume>
               <Footer></Footer>
             </>
           }

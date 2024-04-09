@@ -214,3 +214,13 @@ footer .counter {
     background-position: 0rem;
   }
 }
+
+/* Hide the scrollbar for the container */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Optional: Customize scrollbar appearance for Firefox */
+.no-scrollbar {
+  scrollbar-width: none; /* Firefox */
+}

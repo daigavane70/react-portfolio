@@ -7,31 +7,32 @@ import OJ from '../assets/oj.webp';
 
 export default function Projects() {
   return (
-    <div className=" bg-slate-50 relative overflow-hidden" id="projects">
-      <div className=" max-w-6xl mx-auto p-5 py-20" id="experience">
-        <div className="text-6xl md:text-7xl text-center md:text-left font-medium text-gray-300 pb-4 mb-16">
+    <div className=" relative overflow-hidden bg-slate-50" id="projects">
+      <div className=" mx-auto max-w-6xl p-5 py-8 md:py-20" id="experience">
+        <div className="mb-8 md:mb-16 pb-4 text-6xl font-medium text-gray-300 md:text-left md:text-7xl">
           Projects
         </div>
 
-        <div className="grid md:grid-cols-4 gap-4">
-          {projects.map((proj) => {
+        <div className="grid gap-4 md:grid-cols-4">
+          {projects.map((proj, index) => {
             return (
-              <div className="p-4 shadow-md space-y-4 bg-white">
-                <div className="h-32 overflow-hidden border-b relative">
-                  <img alt="" src={proj.img} className="w-full absolute left-0 my-auto "></img>
+              <div className="space-y-4 bg-white p-4 shadow-md" key={`project${index}`}>
+                <div className="relative h-32 overflow-hidden border-b">
+                  <img alt="" src={proj.img} className="absolute left-0 my-auto w-full "></img>
                 </div>
                 <div className="text-2xl text-cyan-500">{proj.title}</div>
-                <div className="h-20 overflow-y-auto text-gray-400 font-light text-xs">
+                <div className="h-20 overflow-y-auto text-xs font-light text-gray-400">
                   {proj.details}
                 </div>
-                <div className="flex justify-end space-x-4 items-center opacity-40">
-                  {proj.links.map((link) => {
+                <div className="flex items-center justify-end space-x-4 opacity-40">
+                  {proj.links.map((link, index) => {
                     return (
                       <a
                         href={link.link}
                         target={'_blank'}
                         rel="noreferrer"
-                        className="h-5 cursor-pointer text-2xl text-gray-500 flex items-center"
+                        className="flex h-5 cursor-pointer items-center text-2xl text-gray-500"
+                        key={`project-link${index + proj.title}`}
                       >
                         {link.icon}
                       </a>
@@ -65,7 +66,7 @@ const projects = [
         link: 'https://oj-client.vercel.app/',
       },
       {
-        icon: <i class="devicon-github-original"></i>,
+        icon: <i className="devicon-github-original"></i>,
         link: 'https://github.com/PCSB-Web-Team/online-judge-server',
       },
     ],
@@ -104,7 +105,7 @@ const projects = [
         link: 'https://rebuild-hub.netlify.app/',
       },
       {
-        icon: <i class="devicon-github-original"></i>,
+        icon: <i className="devicon-github-original"></i>,
         link: 'https://github.com/Rebuild-Hub/Rebuild-Hub-Client',
       },
     ],
@@ -125,7 +126,7 @@ const projects = [
         link: 'https://pictdebsoc.github.io/the_editorial/issue.html',
       },
       {
-        icon: <i class="devicon-github-original"></i>,
+        icon: <i className="devicon-github-original"></i>,
         link: 'https://github.com/pictdebsoc/the_editorial',
       },
     ],

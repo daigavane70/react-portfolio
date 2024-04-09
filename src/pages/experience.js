@@ -3,41 +3,43 @@ import { getDriveUrlById } from '../utils';
 
 export default function Experience() {
   return (
-    <div className=" max-w-6xl mx-auto p-5 py-20" id="experience">
-      <div className="text-6xl md:text-7xl text-center md:text-left font-medium text-gray-300 pb-4 mb-16">
+    <div className=" mx-auto max-w-6xl p-5 py-8 md:py-20" id="experience">
+      <div className="mb-8 md:mb-16 pb-4 text-6xl font-medium text-gray-300 md:text-left md:text-7xl">
         Experience
       </div>
       {experiences.map((exp) => {
         return (
-          <div className="w-full shadow-md px-4 py-8 rounded-lg mb-10">
-            <div className=" grid md:grid-cols-4 gap-4 md:order-2">
-              <div
-                className="w-full h-40 flex items-center justify-center my-auto hover:scale-105 transform transition ease-in cursor-pointer"
-                onClick={() => window.open(exp.companyUrl || window.location, '_blank')}
-              >
+          <div className=" mb-10" key={`experience${exp.company}`}>
+            <div className="mb-2 flex flex-row items-center border-b-[1px] border-b-gray-200 pb-2">
+              <div className="mr-4 flex h-[32px] w-[32px] items-center justify-center">
                 <img
-                  className="max-h-full max-w-full rounded-md"
+                  className="max-h-full max-w-full transform cursor-pointer rounded-md transition ease-in hover:scale-105"
                   src={
                     exp.img ||
                     'https://icons.veryicon.com/png/o/miscellaneous/zr_icon/company-23.png'
                   }
                   alt=""
-                ></img>
+                  onClick={() => window.open(exp.companyUrl || window.location, '_blank')}
+                />
               </div>
-              <div className="md:col-span-3 space-y-4 my-auto">
-                <div className="text-lg md:text-2xl text-cyan-500">{exp.company}</div>
-                <div className="md:flex justify-between">
-                  <div className="text-xl text-slate-500 ">{exp.position}</div>
-                  <div className=" text-slate-400">{exp.date}</div>
-                </div>
-                <div className=" text-gray-600 font-light text-sm px-4">
-                  <ul className="list-disc">
-                    {exp.details.map((detail) => (
-                      <li>{detail}</li>
-                    ))}
-                  </ul>
+
+              <div className="flex-1">
+                <div className="text-lg font-bold text-gray-700 md:text-lg">{exp.company}</div>
+                <div className="flex flex-col justify-between md:flex-row">
+                  <div className="text-md font-semibold text-slate-500 md:text-lg">
+                    {exp.position}
+                  </div>
+                  <div className="text-sm text-slate-500 md:text-base">{exp.date}</div>
                 </div>
               </div>
+            </div>
+
+            <div className=" pl-4 text-sm text-gray-600">
+              <ul className="list-disc">
+                {exp.details.map((detail, index) => (
+                  <li key={`exp-details${index + exp.company}`}>{detail}</li>
+                ))}
+              </ul>
             </div>
           </div>
         );
@@ -48,20 +50,33 @@ export default function Experience() {
 
 const experiences = [
   {
+    position: 'Software Development Engineer 1 Full-Stack',
+    company: 'Upstox',
+    details: [
+      'Architected a comprehensive and portable notification service capable of delivering Email, SMS, and push notifications to 10M+ users on both mobile apps and the web with the help of Java Spring Boot and Apache Kafka.',
+      'Spearheaded implementation of data retrieval jobs from services like Morningstar, leveraging Thread Pools for async data handling; streamlined processes, reducing data retrieval time by 50% and achieving 99.9% job success rate.',
+      'Utilized advanced monitoring and bug resolution tools such as Prometheus, Athena, Sumo Logic, and Datadog to ensure proactive monitoring and efficient bug resolution within the software ecosystem.',
+      'Worked on a Rundeck Job to fetch active IPO details at a specific interval from NSE and update on Upstox’s platform.',
+      'HolidayMaster processor to update trading holidays from a CSV file into MySQL using java.nio.',
+      'Service to generate portfolio statement of the user in the form of PDF file using Thymeleaf template engine.',
+      'Spearheaded the development of Personal Loans and Peer-to-Peer investing platforms, crafting intricate UI components for user-friendly loan configuration and optimal selection.',
+      'Engineered Government Bonds securities and Sovereign gold bonds applications with Next.js, significantly enhancing performance by reducing bundle size from 5.13MB to 735KB, thereby minimizing loading times.',
+      'Created Personal Loans and Peer-to-peer investing web applications using Next.js, this platform is used by 50k people on an average monthly.',
+    ],
+    date: 'Jan 2022 - Present',
+    img: 'https://media.licdn.com/dms/image/C4E0BAQHqu3S3cd_R-g/company-logo_200_200/0/1631600709019/upstox_logo?e=1720656000&v=beta&t=sIlL9hdqYlnj0_rKh6CMDz7r-5E781VALgnJnc7IQlk',
+    companyUrl: 'https://upstox.com/',
+  },
+  {
     position: 'SDE Intern',
     company: 'Upstox',
     details: [
-      'Architected a comprehensive and portable notification service capable of delivering Email, SMS, and push notifications to both mobile app and web users with the help of Apache Kafka and Spring Boot.',
-      'Implemented data retrieval jobs from services like Morningstar, employing efficient processing techniques and leveraging Thread Pools for asynchronous data handling, deployed the jobs on Rundeck.',
       'Designed and implemented a file processor service utilizing java.nio to facilitate the seamless update of trading holiday, order details, and fund information from CSV files into a MySQL database.',
-      'Service to generate portfolio statement of userin the form of PDF file using Thymeleaf template engine.',
-      'Backend service migration of IPO application from Node.js to Spring-Boot.',
-      'Utilized advanced monitoring and bug resolution tools such as Prometheus, Athena, Sumo Logic, and Datadog to ensure proactive monitoring and efficient bug resolution within the software ecosystem.',
-      'Achieved a significant enhancement in web API performance by reducing average response time by 400ms through meticulous optimization of MySQL queries and fine-tuning code logic.',
-      'Contributed to enhancing the user interface of Mutual Funds and IPO applications, leveraging React.JS for development.',
+      'Contributed to migrating the IPO backend service from Node.js to Spring Boot, enhancing concurrency and strengthening platform reliability within the Java ecosystem, resulting in improved performance and scalability.',
+      'Contributed to enhancing the user interface of mutual funds and IPO applications, leveraging React.JS for development.',
     ],
-    date: 'Jan 2022 - Present',
-    img: 'https://lever-client-logos.s3.us-west-2.amazonaws.com/eb7738e7-d908-42f5-97da-61b28e53ce73-1631634736627.png',
+    date: 'Jan 2022 - Jul 2023',
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHiwLODfSkJb0pWA7g_GUM-lZ80WNm5fbz0c-kVD7ShQ&s',
     companyUrl: 'https://upstox.com/',
   },
   {

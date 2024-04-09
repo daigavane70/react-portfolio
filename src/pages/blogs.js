@@ -4,30 +4,30 @@ import BlogsData from '../assets/blogsData.json';
 
 export default function BlogsAndPublications() {
   return (
-    <div className=" bg-black/90 relative overflow-hidden text-gray-400" id="blogs">
-      <div className=" max-w-6xl mx-auto p-5 py-20">
+    <div className=" relative overflow-hidden bg-black/90 text-gray-400" id="blogs">
+      <div className=" mx-auto max-w-6xl p-5 py-8 md:py-20">
         <div className="mb-16">
-          <div className="text-6xl md:text-7xl text-center md:text-left font-medium text-gray-300 pb-4">
+          <div className="pb-4 text-6xl font-medium text-gray-300 md:text-left md:text-7xl">
             Blogs & Publications
           </div>
           <div>Check out my informative blog posts and research papers.</div>
         </div>
-        <div className="grid md:grid-cols-2 gap-8">
-          {BlogsData.map((blog) => (
-            <div className="border-l px-2 border-gray-400 transition duration-30 group hover:text-white hover:bg-gray-600/10 ease-in-out text-xs p-2">
-              <div className="font-bold text-base text-green-500 group-hover:text-green-600">
+        <div className="grid gap-8 md:grid-cols-2">
+          {BlogsData.map((blog, index) => (
+            <div className="duration-30 group border-l border-gray-400 p-2 px-2 text-xs transition ease-in-out hover:bg-gray-600/10 hover:text-white" key={`blogs${index}`}>
+              <div className="text-base font-bold text-green-500 group-hover:text-green-600">
                 {blog.title}
               </div>
               <div>{blog.shortDescription}</div>
-              <div className="font-bold text-gray-200 mt-2">
+              <div className="mt-2 font-bold text-gray-200">
                 <div className="space-x-2">
-                  {blog.links.map((link) =>
+                  {blog.links.map((link, index) =>
                     blog.isPublication ? (
-                      <a href={link.url} target="_blank" rel="noreferrer">
+                      <a href={link.url} target="_blank" rel="noreferrer" key={`blogslink$${index}`}>
                         {link.title}
                       </a>
                     ) : (
-                      <Link className="" to={'/blogs-info/' + blog.title} target="_blank">
+                      <Link className="" to={'/blogs-info/' + blog.title} target="_blank" key={`blogurl${index}`}>
                         {link.title}
                       </Link>
                     ),

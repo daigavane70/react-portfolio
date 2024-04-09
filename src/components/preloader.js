@@ -16,12 +16,12 @@ export default function Preloader() {
   ];
   const random = Math.floor(Math.random() * quotes.length);
   return (
-    <div class="preloader space-y-2">
-      <div className="w-32 text-center goku-bg">
+    <div className="preloader space-y-2">
+      <div className="goku-bg w-32 text-center">
         <img src={Goku1} alt="Goku_Img" className=" invert"></img>
       </div>
-      <div className="text-gray-200 font-light max-w-[400px]">“{quotes[random].quote}”</div>
-      <div className="text-sky-400 font-light max-w-[400px] text-sm">
+      <div className="max-w-[400px] font-light text-gray-200">“{quotes[random].quote}”</div>
+      <div className="max-w-[400px] text-sm font-light text-sky-400">
         {' '}
         - {quotes[random].author}
       </div>

@@ -2,15 +2,15 @@ import React from 'react';
 
 export default function Skills() {
   return (
-    <div className=" max-w-6xl mx-auto p-5 py-20" id="skills">
-      <div className="text-6xl md:text-7xl text-center md:text-left font-medium text-gray-300 pb-4 mb-16">
+    <div className=" mx-auto max-w-6xl p-5 py-8 md:py-20" id="skills">
+      <div className="mb-8 md:mb-16 pb-4 text-6xl font-medium text-gray-300 md:text-left md:text-7xl">
         Skills
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {skills.map((skill) => {
+      <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+        {skills.map((skill, index) => {
           return (
-            <div className="flex space-x-2 items-center">
+            <div className="flex items-center space-x-2" key={`skill${index}`}>
               {skill.icon && <div className="text-2xl">{skill.icon}</div>}
               {skill.img && <img src={skill.img} className="h-6 w-6" alt=""></img>}
               <div className=" text-gray-500">{skill.skill}</div>
@@ -24,51 +24,51 @@ export default function Skills() {
 
 const skills = [
   {
-    icon: <i class="devicon-spring-plain colored"></i>,
+    icon: <i className="devicon-spring-plain colored"></i>,
     skill: 'Spring',
   },
   {
-    icon: <i class="devicon-apachekafka-original colored"></i>,
+    icon: <i className="devicon-apachekafka-original colored"></i>,
     skill: 'Apache Kafka',
   },
   {
-    icon: <i class="devicon-nodejs-plain colored"></i>,
+    icon: <i className="devicon-nodejs-plain colored"></i>,
     skill: 'Node JS',
   },
   {
-    icon: <i class="devicon-express-original colored"></i>,
+    icon: <i className="devicon-express-original colored"></i>,
     skill: 'Express JS',
   },
   {
-    icon: <i class="devicon-nginx-original colored"></i>,
+    icon: <i className="devicon-nginx-original colored"></i>,
     skill: 'Nginx',
   },
   {
-    icon: <i class="devicon-react-original colored"></i>,
+    icon: <i className="devicon-react-original colored"></i>,
     skill: 'React',
   },
   {
-    icon: <i class="devicon-redux-original colored"></i>,
+    icon: <i className="devicon-redux-original colored"></i>,
     skill: 'Redux',
   },
   {
-    icon: <i class="devicon-storybook-plain colored"></i>,
+    icon: <i className="devicon-storybook-plain colored"></i>,
     skill: 'Storybook',
   },
   {
-    icon: <i class="devicon-bootstrap-plain colored"></i>,
+    icon: <i className="devicon-bootstrap-plain colored"></i>,
     skill: 'Bootstrap',
   },
   {
-    icon: <i class="devicon-materialui-plain colored"></i>,
+    icon: <i className="devicon-materialui-plain colored"></i>,
     skill: 'Material UI',
   },
   {
-    icon: <i class="devicon-tailwindcss-plain colored"></i>,
+    icon: <i className="devicon-tailwindcss-plain colored"></i>,
     skill: 'Tailwind CSS',
   },
   {
-    icon: <i class="devicon-css3-plain colored"></i>,
+    icon: <i className="devicon-css3-plain colored"></i>,
     skill: 'CSS',
   },
   // {

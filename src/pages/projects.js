@@ -13,10 +13,11 @@ export default function Projects() {
           Projects
         </div>
 
-        <div className="grid gap-4 md:grid-cols-4">
-          {projects.map((proj, index) => {
+        <div className="overflow-x-auto space-x-4 no-scrollbar snap-x-mandatory">
+        <div className='flex gap-4 py-4 snap-start'>
+        {projects.map((proj, index) => {
             return (
-              <div className="space-y-4 bg-white p-4 shadow-md" key={`project${index}`}>
+              <div className="space-y-4 bg-white p-4 shadow-md min-w-[300px]" key={`project${index}`}>
                 <div className="relative h-32 overflow-hidden border-b">
                   <img alt="" src={proj.img} className="absolute left-0 my-auto w-full "></img>
                 </div>
@@ -42,6 +43,7 @@ export default function Projects() {
               </div>
             );
           })}
+        </div>
         </div>
       </div>
     </div>

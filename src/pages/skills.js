@@ -28,6 +28,10 @@ const skills = [
     skill: 'Spring',
   },
   {
+    icon: <i className="devicon-go-original-wordmark colored"></i>,
+    skill: "Go",
+  },
+  {
     icon: <i className="devicon-apachekafka-original colored"></i>,
     skill: 'Apache Kafka',
   },
@@ -71,10 +75,6 @@ const skills = [
     icon: <i className="devicon-css3-plain colored"></i>,
     skill: 'CSS',
   },
-  // {
-  //   icon: '',
-  //   skill: 'JWT',
-  // },
   {
     img: 'https://symbols.getvecta.com/stencil_92/21_postman-icon.c79f00c910.svg',
     skill: 'Postman',

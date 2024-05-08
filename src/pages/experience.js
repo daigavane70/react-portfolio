@@ -23,18 +23,18 @@ export default function Experience() {
                 />
               </div>
 
-              <div className="flex-1">
-                <div className="text-lg font-bold text-gray-700 md:text-lg">{exp.company}</div>
+              <div className="flex-1 cursor-pointer">
+                <div className="text-lg font-bold md:text-lg">{exp.company}</div>
                 <div className="flex flex-col justify-between md:flex-row">
-                  <div className="text-md font-semibold text-slate-500 md:text-lg">
+                  <div className="text-md md:text-md font-semibold text-gray-600">
                     {exp.position}
                   </div>
-                  <div className="text-sm text-slate-500 md:text-base">{exp.date}</div>
+                  <div className="font-semibold text-sm">{exp.date}</div>
                 </div>
               </div>
             </div>
 
-            <div className=" pl-4 text-sm text-gray-600">
+            <div className=" pl-4 tracking-wide text-sm text-gray-500">
               <ul className="list-disc">
                 {exp.details.map((detail, index) => (
                   <li key={`exp-details${index + exp.company}`}>{detail}</li>
@@ -50,7 +50,7 @@ export default function Experience() {
 
 const experiences = [
   {
-    position: 'Software Development Engineer 1 Full-Stack',
+    position: 'SDE 1 Full-Stack',
     company: 'Upstox',
     details: [
       'Architected a comprehensive and portable notification service capable of delivering Email, SMS, and push notifications to 10M+ users on both mobile apps and the web with the help of Java Spring Boot and Apache Kafka.',

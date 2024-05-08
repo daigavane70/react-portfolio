@@ -11,7 +11,7 @@ export default function Skills() {
         {skills.map((skill, index) => {
           return (
             <div className="flex items-center space-x-2" key={`skill${index}`}>
-              {skill.icon && <div className="text-2xl">{skill.icon}</div>}
+              {skill.icon && <div className="text-2xl flex">{skill.icon}</div>}
               {skill.img && <img src={skill.img} className="h-6 w-6" alt=""></img>}
               <div className=" text-gray-500">{skill.skill}</div>
             </div>
@@ -76,7 +76,7 @@ const skills = [
     skill: 'CSS',
   },
   {
-    img: 'https://symbols.getvecta.com/stencil_92/21_postman-icon.c79f00c910.svg',
+    img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg',
     skill: 'Postman',
   },
   {

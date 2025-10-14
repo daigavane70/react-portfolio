@@ -53,8 +53,14 @@ const experiences = [
     position: 'Backend Engineer',
     company: 'Fampay',
     details: [
-       'Architected a real-time chat-based transaction system using Golang and DynamoDB, designed to handle 15M daily transactions with optimized performance: 20ms latency for transaction/mandate event ingestion, 10ms for chat screen loading, and 5ms for text message storage; implemented Valkey caching layer to reduce DynamoDB WCU/RCU costs for high-frequency conversations',
-      ],
+  "Architected a real-time chat-based transaction system using Golang and DynamoDB, designed to handle 15M daily transactions with optimized performance: 20ms latency for transaction/mandate event ingestion, 10ms for chat screen loading, and 5ms for text message storage; implemented Valkey caching layer to reduce DynamoDB WCU/RCU costs for high-frequency conversations",
+  "Engineered a 5-microservice architecture with specialized pods for consumer events, REST APIs, task scheduling, background workers, and OpenSearch ingestion; implemented 8-node Valkey cluster with 4 masters/shards and 4 replicas for high availability",
+  "Built cost-optimized search infrastructure using OpenSearch with monthly rollover index strategy, enabling ultra-fast search across transactions and messages while reducing Amazon Search OCU costs by 60% through read-only historical indexes and active current-month ingestion",
+  "Developed comprehensive data pipeline: DynamoDB Streams → Lambda → Kafka → OpenSearch-ingestion-consumer → AWS OpenSearch, ensuring real-time search capabilities with change data capture for seamless data flow",
+  "Implemented UPI TPAP features including bank-to-bank self-transfer and UPI Delegate functionality, enabling 7M daily transacting users to utilize secondary payment accounts without bank requirements, significantly expanding platform accessibility",
+  "Led technical mentorship of 2 interns while building automated rewards expiry system using PostgreSQL, achieving ₹5–7 lakhs monthly cost savings through optimized database operations and compliance automation",
+  "Established comprehensive monitoring infrastructure using Grafana dashboards tracking CPU utilization, Valkey performance, p99 latencies, and background job processing, with automated DynamoDB provisioning based on real-time metrics"
+],
     date: 'July 2024 - Present',
     img: 'https://shortiougc.com/mainpages-logo/lnk.fampay.in/LxvEFamtUB3-IwRelHjb0200_200/0/1631600709019/upstox_logo?e=1720656000&v=beta&t=sIlL9hdqYlnj0_rKh6CMDz7r-5E781VALgnJnc7IQlk',
     companyUrl: 'https://www.famapp.in/',

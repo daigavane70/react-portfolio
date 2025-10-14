@@ -50,6 +50,19 @@ export default function Experience() {
 
 const experiences = [
   {
+    position: 'Backend Engineer',
+    company: 'Fampay',
+    details: [
+       'Architected a real-time chat-based transaction system using Golang and DynamoDB, designed to handle 15M daily
+transactions with optimized performance: 20ms latency for transaction/mandate event ingestion, 10ms for chat
+screen loading, and 5ms for text message storage; implemented Valkey caching layer to reduce DynamoDB WCU/RCU
+costs for high-frequency conversations',
+      ],
+    date: 'July 2024 - Present',
+    img: 'https://shortiougc.com/mainpages-logo/lnk.fampay.in/LxvEFamtUB3-IwRelHjb0200_200/0/1631600709019/upstox_logo?e=1720656000&v=beta&t=sIlL9hdqYlnj0_rKh6CMDz7r-5E781VALgnJnc7IQlk',
+    companyUrl: 'https://www.famapp.in/',
+  },
+  {
     position: 'SDE 1 Full-Stack',
     company: 'Upstox',
     details: [
@@ -63,7 +76,7 @@ const experiences = [
       'Engineered Government Bonds securities and Sovereign gold bonds applications with Next.js, significantly enhancing performance by reducing bundle size from 5.13MB to 735KB, thereby minimizing loading times.',
       'Created Personal Loans and Peer-to-peer investing web applications using Next.js, this platform is used by 50k people on an average monthly.',
     ],
-    date: 'Aug 2023 - Present',
+    date: 'Aug 2023 - July 2024',
     img: 'https://media.licdn.com/dms/image/C4E0BAQHqu3S3cd_R-g/company-logo_200_200/0/1631600709019/upstox_logo?e=1720656000&v=beta&t=sIlL9hdqYlnj0_rKh6CMDz7r-5E781VALgnJnc7IQlk',
     companyUrl: 'https://upstox.com/',
   },

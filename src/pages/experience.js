@@ -62,7 +62,7 @@ const experiences = [
   "Established comprehensive monitoring infrastructure using Grafana dashboards tracking CPU utilization, Valkey performance, p99 latencies, and background job processing, with automated DynamoDB provisioning based on real-time metrics"
 ],
     date: 'July 2024 - Present',
-    img: 'https://shortiougc.com/mainpages-logo/lnk.fampay.in/LxvEFamtUB3-IwRelHjb0200_200/0/1631600709019/upstox_logo?e=1720656000&v=beta&t=sIlL9hdqYlnj0_rKh6CMDz7r-5E781VALgnJnc7IQlk',
+    img: 'https://www.famapp.in/assets/localImages/fampayLogo.png',
     companyUrl: 'https://www.famapp.in/',
   },
   {

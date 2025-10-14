@@ -53,10 +53,7 @@ const experiences = [
     position: 'Backend Engineer',
     company: 'Fampay',
     details: [
-       'Architected a real-time chat-based transaction system using Golang and DynamoDB, designed to handle 15M daily
-transactions with optimized performance: 20ms latency for transaction/mandate event ingestion, 10ms for chat
-screen loading, and 5ms for text message storage; implemented Valkey caching layer to reduce DynamoDB WCU/RCU
-costs for high-frequency conversations',
+       'Architected a real-time chat-based transaction system using Golang and DynamoDB, designed to handle 15M daily transactions with optimized performance: 20ms latency for transaction/mandate event ingestion, 10ms for chat screen loading, and 5ms for text message storage; implemented Valkey caching layer to reduce DynamoDB WCU/RCU costs for high-frequency conversations',
       ],
     date: 'July 2024 - Present',
     img: 'https://shortiougc.com/mainpages-logo/lnk.fampay.in/LxvEFamtUB3-IwRelHjb0200_200/0/1631600709019/upstox_logo?e=1720656000&v=beta&t=sIlL9hdqYlnj0_rKh6CMDz7r-5E781VALgnJnc7IQlk',

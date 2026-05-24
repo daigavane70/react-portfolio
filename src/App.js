@@ -45,7 +45,7 @@ function App() {
           }
         ></Route>
         <Route path="/blogs-info/:name" element={<BlogsInfo></BlogsInfo>}></Route>
-        <Route path="/qr-tool" element={<QRTool />}></Route>
+        <Route path="/qr" element={<QRTool />}></Route>
       </Routes>
     </>
   );

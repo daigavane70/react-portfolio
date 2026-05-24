@@ -4,7 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 export default function Navbar() {
   const [showNav, setShowNav] = useState(false);
   const location = useLocation();
-  const isQRTool = location.pathname === '/qr-tool';
+  const isQRTool = location.pathname === '/qr';
 
   function closeMobileNav() {
     setShowNav(false);
@@ -57,7 +57,7 @@ export default function Navbar() {
             </a>
           </>
         )}
-        <Link onClick={closeMobileNav} to="/qr-tool" className="tab-button" style={{ color: 'aqua' }}>
+        <Link onClick={closeMobileNav} to="/qr" className="tab-button" style={{ color: 'aqua' }}>
           QR Tool
         </Link>
       </div>

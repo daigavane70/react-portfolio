@@ -171,6 +171,22 @@ export default function QRTool() {
               Point your camera at a QR code — it detects automatically.
             </p>
 
+            {!scanning ? (
+              <button
+                onClick={startCamera}
+                style={{ width: '100%', padding: '16px', borderRadius: 14, background: 'aqua', color: 'black', fontWeight: 700, fontSize: 16, border: 'none', cursor: 'pointer' }}
+              >
+                Start Scanning
+              </button>
+            ) : (
+              <button
+                onClick={stopCamera}
+                style={{ width: '100%', padding: '16px', borderRadius: 14, background: 'rgb(45,45,45)', color: 'white', fontWeight: 600, fontSize: 16, border: 'none', cursor: 'pointer' }}
+              >
+                Stop
+              </button>
+            )}
+
             {/* Camera viewport */}
             <div
               style={{
@@ -204,22 +220,6 @@ export default function QRTool() {
 
             {cameraError && (
               <p style={{ color: 'rgb(248,113,113)', fontSize: 13, textAlign: 'center' }}>{cameraError}</p>
-            )}
-
-            {!scanning ? (
-              <button
-                onClick={startCamera}
-                style={{ width: '100%', padding: '16px', borderRadius: 14, background: 'aqua', color: 'black', fontWeight: 700, fontSize: 16, border: 'none', cursor: 'pointer' }}
-              >
-                Start Scanning
-              </button>
-            ) : (
-              <button
-                onClick={stopCamera}
-                style={{ width: '100%', padding: '16px', borderRadius: 14, background: 'rgb(45,45,45)', color: 'white', fontWeight: 600, fontSize: 16, border: 'none', cursor: 'pointer' }}
-              >
-                Stop
-              </button>
             )}
           </div>
         )}

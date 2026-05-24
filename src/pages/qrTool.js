@@ -131,39 +131,6 @@ export default function QRTool() {
           QR Tool
         </h1>
 
-        {/* Step indicators */}
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 8, marginBottom: 32 }}>
-          {['Scan', 'Edit', 'Generate'].map((label, i) => {
-            const s = i + 1;
-            const active = step === s;
-            const done = step > s;
-            return (
-              <React.Fragment key={label}>
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
-                  <div
-                    style={{
-                      width: 32, height: 32, borderRadius: '50%',
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      fontSize: 13, fontWeight: 700,
-                      background: active ? 'aqua' : done ? 'rgb(22,163,74)' : 'rgb(45,45,45)',
-                      color: active || done ? 'black' : 'rgb(120,120,120)',
-                      border: active ? '2px solid aqua' : done ? '2px solid rgb(22,163,74)' : '2px solid rgb(55,55,55)',
-                    }}
-                  >
-                    {done ? '✓' : s}
-                  </div>
-                  <span style={{ fontSize: 11, color: active ? 'aqua' : done ? 'rgb(74,222,128)' : 'rgb(100,100,100)' }}>
-                    {label}
-                  </span>
-                </div>
-                {i < 2 && (
-                  <div style={{ height: 1, width: 32, background: done ? 'rgb(22,163,74)' : 'rgb(45,45,45)', marginBottom: 16 }} />
-                )}
-              </React.Fragment>
-            );
-          })}
-        </div>
-
         {/* ── STEP 1: SCAN ── */}
         {step === STEP_SCAN && (
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20 }}>

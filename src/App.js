@@ -11,6 +11,7 @@ import BlogsInfo from './pages/blogsInfo';
 import Experience from './pages/experience';
 import Home from './pages/home';
 import Projects from './pages/projects';
+import QRTool from './pages/qrTool';
 import Skills from './pages/skills';
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
           }
         ></Route>
         <Route path="/blogs-info/:name" element={<BlogsInfo></BlogsInfo>}></Route>
+        <Route path="/qr-tool" element={<QRTool />}></Route>
       </Routes>
     </>
   );

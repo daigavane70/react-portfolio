@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
 import Footer from './components/footer';
 import Navbar from './components/navbar';
@@ -15,7 +15,12 @@ import QRTool from './pages/qrTool';
 import Skills from './pages/skills';
 import Vishnu from './pages/vishnu';
 
+const FULLSCREEN_ROUTES = ['/vishnu'];
+
 function App() {
+  const location = useLocation();
+  const isFullscreen = FULLSCREEN_ROUTES.includes(location.pathname);
+
   useEffect(() => {
     function disablePreloader() {
       const loader = document.getElementsByClassName('preloader')[0];
@@ -29,7 +34,7 @@ function App() {
   return (
     <>
       {/* <Preloader></Preloader> */}
-      <Navbar />
+      {!isFullscreen && <Navbar />}
       <Routes>
         <Route
           path="/"

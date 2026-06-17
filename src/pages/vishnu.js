@@ -255,34 +255,32 @@ export default function Vishnu() {
 
   return (
     <div style={styles.page}>
-      <div style={styles.container}>
-        <div style={styles.header}>
-          <h2 style={styles.title}>Vishnu</h2>
+      <div style={styles.header}>
+        <h2 style={styles.title}>Vishnu</h2>
+        <button
+          onClick={() => { localStorage.removeItem(TOKEN_KEY); setToken(null); }}
+          style={styles.logoutBtn}
+        >
+          Lock
+        </button>
+      </div>
+
+      <div style={styles.tabs}>
+        {tabs.map((t) => (
           <button
-            onClick={() => { localStorage.removeItem(TOKEN_KEY); setToken(null); }}
-            style={styles.logoutBtn}
+            key={t}
+            onClick={() => setActiveTab(t)}
+            style={activeTab === t ? styles.tabActive : styles.tabInactive}
           >
-            Lock
+            {t.charAt(0).toUpperCase() + t.slice(1)}
           </button>
-        </div>
+        ))}
+      </div>
 
-        <div style={styles.tabs}>
-          {tabs.map((t) => (
-            <button
-              key={t}
-              onClick={() => setActiveTab(t)}
-              style={activeTab === t ? styles.tabActive : styles.tabInactive}
-            >
-              {t.charAt(0).toUpperCase() + t.slice(1)}
-            </button>
-          ))}
-        </div>
-
-        <div style={styles.tabContent}>
-          {activeTab === 'chat' && <ChatTab token={token} />}
-          {activeTab === 'goals' && <GoalsTab token={token} />}
-          {activeTab === 'reminders' && <RemindersTab token={token} />}
-        </div>
+      <div style={styles.tabContent}>
+        {activeTab === 'chat' && <ChatTab token={token} />}
+        {activeTab === 'goals' && <GoalsTab token={token} />}
+        {activeTab === 'reminders' && <RemindersTab token={token} />}
       </div>
     </div>
   );
@@ -292,28 +290,20 @@ export default function Vishnu() {
 
 const styles = {
   page: {
-    minHeight: '100vh',
+    height: '100vh',
     backgroundColor: '#0a0a0a',
     display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: '20px',
+    flexDirection: 'column',
     fontFamily: 'monospace',
-  },
-  container: {
-    width: '100%',
-    maxWidth: '700px',
-    backgroundColor: '#111',
-    border: '1px solid #222',
-    borderRadius: '12px',
     overflow: 'hidden',
   },
   header: {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: '16px 20px',
+    padding: '16px 24px',
     borderBottom: '1px solid #222',
+    flexShrink: 0,
   },
   title: { color: '#00ffcc', margin: 0, fontSize: '18px', letterSpacing: '2px' },
   logoutBtn: {
@@ -328,6 +318,7 @@ const styles = {
   tabs: {
     display: 'flex',
     borderBottom: '1px solid #222',
+    flexShrink: 0,
   },
   tabActive: {
     flex: 1,
@@ -351,8 +342,8 @@ const styles = {
     fontSize: '13px',
     fontFamily: 'monospace',
   },
-  tabContent: { minHeight: '500px' },
-  chatContainer: { display: 'flex', flexDirection: 'column', height: '560px' },
+  tabContent: { flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden' },
+  chatContainer: { display: 'flex', flexDirection: 'column', flex: 1, overflow: 'hidden' },
   chatHeader: {
     display: 'flex',
     justifyContent: 'space-between',
@@ -371,7 +362,7 @@ const styles = {
     fontSize: '11px',
     fontFamily: 'monospace',
   },
-  messages: { flex: 1, overflowY: 'auto', padding: '16px', display: 'flex', flexDirection: 'column', gap: '12px' },
+  messages: { flex: 1, overflowY: 'auto', padding: '16px 24px', display: 'flex', flexDirection: 'column', gap: '12px' },
   userMsg: { alignSelf: 'flex-end', maxWidth: '80%' },
   botMsg: { alignSelf: 'flex-start', maxWidth: '85%' },
   userLabel: { fontSize: '10px', color: '#00ffcc', display: 'block', marginBottom: '4px', textAlign: 'right' },
@@ -386,7 +377,7 @@ const styles = {
     color: '#ccc',
     whiteSpace: 'pre-wrap',
   },
-  inputRow: { display: 'flex', gap: '8px', padding: '12px 16px', borderTop: '1px solid #1a1a1a' },
+  inputRow: { display: 'flex', gap: '8px', padding: '12px 24px', borderTop: '1px solid #1a1a1a', flexShrink: 0 },
   textarea: {
     flex: 1,
     backgroundColor: '#1a1a1a',

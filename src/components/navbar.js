@@ -60,6 +60,9 @@ export default function Navbar() {
         <Link onClick={closeMobileNav} to="/qr" className="tab-button" style={{ color: 'aqua' }}>
           QR Tool
         </Link>
+        <Link onClick={closeMobileNav} to="/vishnu" className="tab-button" style={{ color: '#00ffcc' }}>
+          Vishnu
+        </Link>
       </div>
     </div>
   );

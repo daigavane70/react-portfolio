@@ -13,6 +13,7 @@ import Home from './pages/home';
 import Projects from './pages/projects';
 import QRTool from './pages/qrTool';
 import Skills from './pages/skills';
+import Vishnu from './pages/vishnu';
 
 function App() {
   useEffect(() => {
@@ -46,6 +47,7 @@ function App() {
         ></Route>
         <Route path="/blogs-info/:name" element={<BlogsInfo></BlogsInfo>}></Route>
         <Route path="/qr" element={<QRTool />}></Route>
+        <Route path="/vishnu" element={<Vishnu />}></Route>
       </Routes>
     </>
   );

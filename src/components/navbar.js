@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 export default function Navbar() {
   const [showNav, setShowNav] = useState(false);
+  const { pathname } = useLocation();
+  const isHome = pathname === '/';
+  const prefix = isHome ? '' : '/';
 
   function closeMobileNav() {
     setShowNav(false);
@@ -28,22 +32,22 @@ export default function Navbar() {
         <i className="fa fa-bars" aria-hidden="true"></i>
       </div>
       <div className={`tabs ${showNav && 'mobile-tabs'}`}>
-        <a onClick={closeMobileNav} href="#home" className="tab-button">
+        <a onClick={closeMobileNav} href={`${prefix}#home`} className="tab-button">
           Home
         </a>
-        <a onClick={closeMobileNav} href="#experience" className="tab-button">
+        <a onClick={closeMobileNav} href={`${prefix}#experience`} className="tab-button">
           Experience
         </a>
-        <a onClick={closeMobileNav} href="#projects" className="tab-button">
+        <a onClick={closeMobileNav} href={`${prefix}#projects`} className="tab-button">
           Projects
         </a>
-        <a onClick={closeMobileNav} href="#blogs" className="tab-button">
+        <a onClick={closeMobileNav} href={`${prefix}#blogs`} className="tab-button">
           Blogs
         </a>
-        <a onClick={closeMobileNav} href="#skills" className="tab-button">
+        <a onClick={closeMobileNav} href={`${prefix}#skills`} className="tab-button">
           Skills
         </a>
-        <a onClick={closeMobileNav} href="#about" className="tab-button">
+        <a onClick={closeMobileNav} href={`${prefix}#about`} className="tab-button">
           About
         </a>
       </div>

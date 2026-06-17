@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { useEffect, useRef, useState } from 'react';
 
 const SERVER = 'https://server.vedantd.com';
@@ -67,6 +68,8 @@ function PasswordGate({ onUnlock }) {
     </div>
   );
 }
+
+PasswordGate.propTypes = { onUnlock: PropTypes.func.isRequired };
 
 // ── Chat tab ──────────────────────────────────────────────────────────────────
 
@@ -155,6 +158,8 @@ function ChatTab({ token }) {
   );
 }
 
+ChatTab.propTypes = { token: PropTypes.string.isRequired };
+
 // ── Goals tab ─────────────────────────────────────────────────────────────────
 
 function GoalsTab({ token }) {
@@ -199,6 +204,8 @@ function GoalsTab({ token }) {
   );
 }
 
+GoalsTab.propTypes = { token: PropTypes.string.isRequired };
+
 // ── Reminders tab ─────────────────────────────────────────────────────────────
 
 function RemindersTab({ token }) {
@@ -233,6 +240,8 @@ function RemindersTab({ token }) {
     </div>
   );
 }
+
+RemindersTab.propTypes = { token: PropTypes.string.isRequired };
 
 // ── Main page ─────────────────────────────────────────────────────────────────
 

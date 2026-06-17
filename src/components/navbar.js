@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   const [showNav, setShowNav] = useState(false);
@@ -47,9 +46,6 @@ export default function Navbar() {
         <a onClick={closeMobileNav} href="#about" className="tab-button">
           About
         </a>
-        <Link onClick={closeMobileNav} to="/vishnu" className="tab-button" style={{ color: '#00ffcc' }}>
-          Vishnu
-        </Link>
       </div>
     </div>
   );

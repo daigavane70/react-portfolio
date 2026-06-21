@@ -1,6 +1,26 @@
 import React, { useState } from 'react';
 import { getDriveUrlById } from '../utils';
 
+function parseDateStr(str) {
+  if (str.toLowerCase() === 'present') return new Date();
+  const [month, year] = str.trim().split(' ');
+  const months = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
+  return new Date(parseInt(year), months.indexOf(month.toLowerCase().slice(0, 3)));
+}
+
+function getDuration(dateRange) {
+  const [startStr, endStr] = dateRange.split(' - ');
+  const start = parseDateStr(startStr);
+  const end = parseDateStr(endStr);
+  let months = (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth());
+  if (months <= 0) return null;
+  const years = Math.floor(months / 12);
+  const rem = months % 12;
+  if (years && rem) return `${years}yr ${rem}m`;
+  if (years) return `${years}yr`;
+  return `${rem}m`;
+}
+
 export default function Experience() {
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -39,7 +59,12 @@ export default function Experience() {
                   <div className="text-md md:text-md font-semibold text-gray-600">
                     {exp.position}
                   </div>
-                  <div className="font-semibold text-sm">{exp.date}</div>
+                  <div className="font-semibold text-sm flex items-center gap-2">
+                    {exp.date}
+                    {getDuration(exp.date) && (
+                      <span className="text-xs text-gray-500 font-normal">· {getDuration(exp.date)}</span>
+                    )}
+                  </div>
                 </div>
               </div>
 

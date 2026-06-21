@@ -168,7 +168,7 @@ const experiences = [
     position: 'SDE 2, Backend',
     company: 'Fampay',
     details: [],
-    date: 'July 2025 - Present',
+    date: 'July 2026 - Present',
     img: 'https://www.famapp.in/assets/localImages/fampayLogo.png',
     companyUrl: 'https://www.famapp.in/',
   },
@@ -184,7 +184,7 @@ const experiences = [
       "Led technical mentorship of 2 interns while building automated rewards expiry system using PostgreSQL, achieving ₹5–7 lakhs monthly cost savings through optimized database operations and compliance automation",
       "Established comprehensive monitoring infrastructure using Grafana dashboards tracking CPU utilization, Valkey performance, p99 latencies, and background job processing, with automated DynamoDB provisioning based on real-time metrics"
     ],
-    date: 'July 2024 - July 2025',
+    date: 'July 2024 - July 2026',
     img: 'https://www.famapp.in/assets/localImages/fampayLogo.png',
     companyUrl: 'https://www.famapp.in/',
   },

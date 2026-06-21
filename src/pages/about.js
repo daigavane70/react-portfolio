@@ -19,7 +19,7 @@ export default function About() {
         <div className="basis-2/3 space-y-4">
           <span className="text-xl text-gray-500">Hi, I am </span>
           <div className="text-4xl font-bold text-cyan-500">Vedant Daigavane</div>
-          <div className="text-xl font-semibold text-gray-500">Passionate Coder & Trader</div>
+          <div className="text-xl font-semibold text-gray-500">Backend Engineer</div>
           <div className="text-justify font-light text-gray-400">
             I am a highly enthusiastic and competitive person who enjoys being around individuals
             who challenge my limits, and I, in turn, strive to push them as well. I have a passion

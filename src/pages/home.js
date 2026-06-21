@@ -13,7 +13,7 @@ export default function Home() {
 
           <div className="flex flex-col items-center justify-center space-x-4 text-lg md:flex-row md:text-2xl">
             <div className="font-bold text-cyan-400">
-              Backend Engineer <span className="font-thin text-white">&</span> Day Trader
+              Backend Engineer
             </div>
             <div className="flex items-center space-x-4">
               <div className="font-extralight text-gray-300">from</div>

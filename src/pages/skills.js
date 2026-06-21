@@ -38,6 +38,7 @@ const skillGroups = [
       { icon: <i className="devicon-apachekafka-original colored" />, skill: 'Apache Kafka' },
       { icon: <i className="devicon-nodejs-plain colored" />, skill: 'Node JS' },
       { icon: <i className="devicon-express-original colored" />, skill: 'Express JS' },
+      { icon: <i className="devicon-graphql-plain colored" />, skill: 'GraphQL' },
       { icon: <i className="devicon-nginx-original colored" />, skill: 'Nginx' },
     ],
   },
@@ -48,12 +49,16 @@ const skillGroups = [
       { img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg', skill: 'MySQL' },
       { img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg', skill: 'MongoDB' },
       { img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg', skill: 'Redis' },
+      { img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg', skill: 'Valkey' },
+      { img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dynamodb/dynamodb-original.svg', skill: 'DynamoDB' },
+      { img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opensearch/opensearch-original.svg', skill: 'OpenSearch' },
     ],
   },
   {
     category: 'Frontend',
     skills: [
       { icon: <i className="devicon-react-original colored" />, skill: 'React' },
+      { icon: <i className="devicon-nextjs-plain colored" />, skill: 'Next.js' },
       { icon: <i className="devicon-redux-original colored" />, skill: 'Redux' },
       { icon: <i className="devicon-tailwindcss-plain colored" />, skill: 'Tailwind CSS' },
       { icon: <i className="devicon-materialui-plain colored" />, skill: 'Material UI' },
@@ -71,11 +76,20 @@ const skillGroups = [
     ],
   },
   {
-    category: 'DevOps & Tools',
+    category: 'Cloud & DevOps',
     skills: [
       { img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg', skill: 'Docker' },
+      { img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg', skill: 'AWS Lambda' },
+      { img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg', skill: 'AWS S3' },
       { img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg', skill: 'Postman' },
-      { icon: <i className="devicon-storybook-plain colored" />, skill: 'Storybook' },
+    ],
+  },
+  {
+    category: 'Observability',
+    skills: [
+      { img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-original.svg', skill: 'Grafana' },
+      { img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prometheus/prometheus-original.svg', skill: 'Prometheus' },
+      { img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/datadog/datadog-original.svg', skill: 'Datadog' },
     ],
   },
 ];

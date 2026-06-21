@@ -94,7 +94,7 @@ export default function Experience() {
             </div>
 
             {/* Roles */}
-            <div className={isMultiRole ? 'ml-7 border-l-2 border-gray-700 pl-5' : ''}>
+            <div className="ml-7 border-l-2 border-gray-700 pl-5">
               {group.roles.map((role, ri) => {
                 const key = `${gi}-${ri}`;
                 const isOpen = openKey === key;
@@ -106,9 +106,7 @@ export default function Experience() {
                       className={`flex items-center gap-3 pb-2 border-b border-gray-800 ${hasDetails ? 'cursor-pointer select-none' : ''}`}
                       onClick={() => hasDetails && toggle(key)}
                     >
-                      {isMultiRole && (
-                        <div className="absolute -ml-[29px] w-3 h-3 rounded-full bg-gray-600 border-2 border-gray-900" />
-                      )}
+                      <div className="absolute -ml-[29px] w-3 h-3 rounded-full bg-gray-600 border-2 border-gray-900" />
                       <div className="flex-1">
                         <div className="text-sm font-semibold text-gray-300">{role.position}</div>
                         <div className="flex flex-col md:flex-row md:items-center md:gap-2 mt-0.5">

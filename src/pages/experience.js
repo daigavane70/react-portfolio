@@ -94,7 +94,7 @@ export default function Experience() {
             </div>
 
             {/* Roles */}
-            <div className="ml-7 border-l-2 border-gray-700 pl-5">
+            <div className="ml-7 border-l-2 border-gray-300 pl-5">
               {group.roles.map((role, ri) => {
                 const key = `${gi}-${ri}`;
                 const isOpen = openKey === key;
@@ -103,23 +103,23 @@ export default function Experience() {
                 return (
                   <div key={role.position + role.date} className="mb-4">
                     <div
-                      className={`relative flex items-center gap-3 pb-2 border-b border-gray-800 ${hasDetails ? 'cursor-pointer select-none' : ''}`}
+                      className={`relative flex items-center gap-3 pb-2 border-b border-gray-200 ${hasDetails ? 'cursor-pointer select-none' : ''}`}
                       onClick={() => hasDetails && toggle(key)}
                     >
-                      <div className="absolute top-1/2 -translate-y-1/2 -left-[27px] w-3 h-3 rounded-full bg-gray-600 border-2 border-gray-900" />
+                      <div className="absolute top-1/2 -translate-y-1/2 -left-[27px] w-3 h-3 rounded-full bg-gray-400 border-2 border-white" />
                       <div className="flex-1">
-                        <div className="text-sm font-semibold text-gray-300">{role.position}</div>
+                        <div className="text-sm font-semibold text-gray-700">{role.position}</div>
                         <div className="flex flex-col md:flex-row md:items-center md:gap-2 mt-0.5">
                           <span className="text-xs text-gray-500">{role.date}</span>
                           {getDuration(role.date) && (
-                            <span className="text-xs text-gray-600">· {getDuration(role.date)}</span>
+                            <span className="text-xs text-gray-400">· {getDuration(role.date)}</span>
                           )}
                         </div>
                       </div>
 
                       {hasDetails && (
                         <div className="shrink-0 self-center transition-transform duration-200" style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}>
-                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-gray-500">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-gray-400">
                             <polyline points="6 9 12 15 18 9" />
                           </svg>
                         </div>
@@ -127,7 +127,7 @@ export default function Experience() {
                     </div>
 
                     {isOpen && (
-                      <ul className="list-disc pl-4 mt-3 tracking-wide text-sm text-gray-500 space-y-1">
+                      <ul className="list-disc pl-4 mt-3 tracking-wide text-sm text-gray-600 space-y-1">
                         {role.details.map((detail, i) => (
                           <li key={i}>{detail}</li>
                         ))}

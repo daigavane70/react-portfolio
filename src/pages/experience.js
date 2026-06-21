@@ -146,7 +146,7 @@ export default function Experience() {
 
 const experiences = [
   {
-    position: 'Backend Engineer · SDE 2',
+    position: 'SDE 2, Backend',
     company: 'Fampay',
     details: [],
     date: 'July 2025 - Present',
@@ -154,7 +154,7 @@ const experiences = [
     companyUrl: 'https://www.famapp.in/',
   },
   {
-    position: 'Backend Engineer · SDE 1',
+    position: 'SDE 1, Backend',
     company: 'Fampay',
     details: [
       "Architected a real-time chat-based transaction system using Golang and DynamoDB, designed to handle 15M daily transactions with optimized performance: 20ms latency for transaction/mandate event ingestion, 10ms for chat screen loading, and 5ms for text message storage; implemented Valkey caching layer to reduce DynamoDB WCU/RCU costs for high-frequency conversations",

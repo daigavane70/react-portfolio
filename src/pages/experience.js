@@ -68,7 +68,15 @@ export default function Experience() {
 
 const experiences = [
   {
-    position: 'Backend Engineer',
+    position: 'Backend Engineer · SDE 2',
+    company: 'Fampay',
+    details: [],
+    date: 'July 2025 - Present',
+    img: 'https://www.famapp.in/assets/localImages/fampayLogo.png',
+    companyUrl: 'https://www.famapp.in/',
+  },
+  {
+    position: 'Backend Engineer · SDE 1',
     company: 'Fampay',
     details: [
   "Architected a real-time chat-based transaction system using Golang and DynamoDB, designed to handle 15M daily transactions with optimized performance: 20ms latency for transaction/mandate event ingestion, 10ms for chat screen loading, and 5ms for text message storage; implemented Valkey caching layer to reduce DynamoDB WCU/RCU costs for high-frequency conversations",
@@ -79,7 +87,7 @@ const experiences = [
   "Led technical mentorship of 2 interns while building automated rewards expiry system using PostgreSQL, achieving ₹5–7 lakhs monthly cost savings through optimized database operations and compliance automation",
   "Established comprehensive monitoring infrastructure using Grafana dashboards tracking CPU utilization, Valkey performance, p99 latencies, and background job processing, with automated DynamoDB provisioning based on real-time metrics"
 ],
-    date: 'July 2024 - Present',
+    date: 'July 2024 - July 2025',
     img: 'https://www.famapp.in/assets/localImages/fampayLogo.png',
     companyUrl: 'https://www.famapp.in/',
   },

@@ -1,5 +1,5 @@
 import React from 'react';
-import { getDriveUrlById } from '../utils';
+import ProfilePic from '../assets/profile.webp';
 
 export default function About() {
   return (
@@ -11,7 +11,7 @@ export default function About() {
       <div className="items-center space-y-8 md:flex md:space-y-0">
         <div className="h-full basis-1/3 md:order-last">
           <img
-            src={getDriveUrlById('1zMOinHcdi5Jx1C6yAkU8P9ZGZz3gXFXp')}
+            src={ProfilePic}
             className="mx-auto h-52 w-52 rounded-full"
             alt=""
           ></img>

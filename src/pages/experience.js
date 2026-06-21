@@ -1,29 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { getDriveUrlById } from '../utils';
 
 export default function Experience() {
+  const [openIndex, setOpenIndex] = useState(null);
+
+  function toggle(i) {
+    setOpenIndex(openIndex === i ? null : i);
+  }
+
   return (
     <div className=" mx-auto max-w-6xl p-5 py-8 md:py-20" id="experience">
       <div className="mb-8 md:mb-16 pb-4 text-6xl font-medium text-gray-300 md:text-left md:text-7xl">
         Experience
       </div>
-      {experiences.map((exp) => {
+      {experiences.map((exp, i) => {
+        const isOpen = openIndex === i;
         return (
-          <div className=" mb-10" key={`experience${exp.company}`}>
-            <div className="mb-2 flex flex-row items-center border-b-[1px] border-b-gray-200 pb-2">
+          <div className="mb-6" key={`experience${exp.company}`}>
+            <div
+              className="mb-2 flex flex-row items-center border-b-[1px] border-b-gray-200 pb-2 cursor-pointer select-none"
+              onClick={() => toggle(i)}
+            >
               <div className="mr-4 flex h-[32px] w-[32px] items-center justify-center">
                 <img
-                  className="max-h-full max-w-full transform cursor-pointer rounded-md transition ease-in hover:scale-105"
+                  className="max-h-full max-w-full transform rounded-md transition ease-in hover:scale-105"
                   src={
                     exp.img ||
                     'https://icons.veryicon.com/png/o/miscellaneous/zr_icon/company-23.png'
                   }
                   alt=""
-                  onClick={() => window.open(exp.companyUrl || window.location, '_blank')}
+                  onClick={(e) => { e.stopPropagation(); window.open(exp.companyUrl || window.location, '_blank'); }}
                 />
               </div>
 
-              <div className="flex-1 cursor-pointer">
+              <div className="flex-1">
                 <div className="text-lg font-bold md:text-lg">{exp.company}</div>
                 <div className="flex flex-col justify-between md:flex-row">
                   <div className="text-md md:text-md font-semibold text-gray-600">
@@ -32,15 +42,23 @@ export default function Experience() {
                   <div className="font-semibold text-sm">{exp.date}</div>
                 </div>
               </div>
+
+              <div className="ml-3 shrink-0 self-center transition-transform duration-200" style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-gray-400">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </div>
             </div>
 
-            <div className=" pl-4 tracking-wide text-sm text-gray-500">
-              <ul className="list-disc">
-                {exp.details.map((detail, index) => (
-                  <li key={`exp-details${index + exp.company}`}>{detail}</li>
-                ))}
-              </ul>
-            </div>
+            {isOpen && (
+              <div className="pl-4 tracking-wide text-sm text-gray-500">
+                <ul className="list-disc">
+                  {exp.details.map((detail, index) => (
+                    <li key={`exp-details${index + exp.company}`} className="mb-1">{detail}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         );
       })}

@@ -12,76 +12,133 @@ function getDuration(dateRange) {
   const [startStr, endStr] = dateRange.split(' - ');
   const start = parseDateStr(startStr);
   const end = parseDateStr(endStr);
-  let months = (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth());
-  if (months <= 0) return null;
-  const years = Math.floor(months / 12);
-  const rem = months % 12;
+  const totalMonths = (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth());
+  if (totalMonths <= 0) return null;
+  const years = Math.floor(totalMonths / 12);
+  const rem = totalMonths % 12;
   if (years && rem) return `${years}yr ${rem}m`;
   if (years) return `${years}yr`;
   return `${rem}m`;
 }
 
-export default function Experience() {
-  const [openIndex, setOpenIndex] = useState(null);
+function getCompanyDuration(roles) {
+  const starts = roles.map(r => parseDateStr(r.date.split(' - ')[0]));
+  const ends = roles.map(r => parseDateStr(r.date.split(' - ')[1]));
+  const earliest = new Date(Math.min(...starts));
+  const latest = new Date(Math.max(...ends));
+  const totalMonths = (latest.getFullYear() - earliest.getFullYear()) * 12 + (latest.getMonth() - earliest.getMonth());
+  if (totalMonths <= 0) return null;
+  const years = Math.floor(totalMonths / 12);
+  const rem = totalMonths % 12;
+  if (years && rem) return `${years}yr ${rem}m`;
+  if (years) return `${years}yr`;
+  return `${rem}m`;
+}
 
-  function toggle(i) {
-    setOpenIndex(openIndex === i ? null : i);
+// Group consecutive entries by company, preserving order
+function groupByCompany(list) {
+  const groups = [];
+  list.forEach((exp) => {
+    const last = groups[groups.length - 1];
+    if (last && last.company === exp.company) {
+      last.roles.push(exp);
+    } else {
+      groups.push({ company: exp.company, img: exp.img, companyUrl: exp.companyUrl, roles: [exp] });
+    }
+  });
+  return groups;
+}
+
+export default function Experience() {
+  const [openKey, setOpenKey] = useState(null); // "companyIdx-roleIdx"
+
+  function toggle(key) {
+    setOpenKey(openKey === key ? null : key);
   }
 
+  const groups = groupByCompany(experiences);
+
   return (
-    <div className=" mx-auto max-w-6xl p-5 py-8 md:py-20" id="experience">
+    <div className="mx-auto max-w-6xl p-5 py-8 md:py-20" id="experience">
       <div className="mb-8 md:mb-16 pb-4 text-6xl font-medium text-gray-300 md:text-left md:text-7xl">
         Experience
       </div>
-      {experiences.map((exp, i) => {
-        const isOpen = openIndex === i;
+
+      {groups.map((group, gi) => {
+        const isMultiRole = group.roles.length > 1;
+        const companyDuration = isMultiRole ? getCompanyDuration(group.roles) : null;
+        const companyDateRange = isMultiRole
+          ? `${group.roles[group.roles.length - 1].date.split(' - ')[0]} - ${group.roles[0].date.split(' - ')[1]}`
+          : null;
+
         return (
-          <div className="mb-6" key={`experience${exp.company}`}>
-            <div
-              className="mb-2 flex flex-row items-center border-b-[1px] border-b-gray-200 pb-2 cursor-pointer select-none"
-              onClick={() => toggle(i)}
-            >
-              <div className="mr-4 flex h-[32px] w-[32px] items-center justify-center">
+          <div key={group.company} className="mb-8">
+            {/* Company header */}
+            <div className="flex items-center gap-4 mb-3">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center">
                 <img
-                  className="max-h-full max-w-full transform rounded-md transition ease-in hover:scale-105"
-                  src={
-                    exp.img ||
-                    'https://icons.veryicon.com/png/o/miscellaneous/zr_icon/company-23.png'
-                  }
+                  className="max-h-full max-w-full rounded-md cursor-pointer transition ease-in hover:scale-105"
+                  src={group.img || 'https://icons.veryicon.com/png/o/miscellaneous/zr_icon/company-23.png'}
                   alt=""
-                  onClick={(e) => { e.stopPropagation(); window.open(exp.companyUrl || window.location, '_blank'); }}
+                  onClick={() => window.open(group.companyUrl || window.location, '_blank')}
                 />
               </div>
-
-              <div className="flex-1">
-                <div className="text-lg font-bold md:text-lg">{exp.company}</div>
-                <div className="flex flex-col justify-between md:flex-row">
-                  <div>
-                    <div className="text-md md:text-md font-semibold text-gray-600">{exp.position}</div>
-                    {getDuration(exp.date) && (
-                      <div className="text-xs text-gray-500 mt-0.5">{getDuration(exp.date)}</div>
-                    )}
+              <div>
+                <div className="text-lg font-bold">{group.company}</div>
+                {isMultiRole && (
+                  <div className="text-xs text-gray-500 mt-0.5">
+                    {companyDateRange} · {companyDuration}
                   </div>
-                  <div className="font-semibold text-sm">{exp.date}</div>
-                </div>
-              </div>
-
-              <div className="ml-3 shrink-0 self-center transition-transform duration-200" style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}>
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-gray-400">
-                  <polyline points="6 9 12 15 18 9" />
-                </svg>
+                )}
               </div>
             </div>
 
-            {isOpen && (
-              <div className="pl-4 tracking-wide text-sm text-gray-500">
-                <ul className="list-disc">
-                  {exp.details.map((detail, index) => (
-                    <li key={`exp-details${index + exp.company}`} className="mb-1">{detail}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
+            {/* Roles */}
+            <div className={isMultiRole ? 'ml-7 border-l-2 border-gray-700 pl-5' : ''}>
+              {group.roles.map((role, ri) => {
+                const key = `${gi}-${ri}`;
+                const isOpen = openKey === key;
+                const hasDetails = role.details.length > 0;
+
+                return (
+                  <div key={role.position + role.date} className="mb-4">
+                    <div
+                      className={`flex items-center gap-3 pb-2 border-b border-gray-800 ${hasDetails ? 'cursor-pointer select-none' : ''}`}
+                      onClick={() => hasDetails && toggle(key)}
+                    >
+                      {isMultiRole && (
+                        <div className="absolute -ml-[29px] w-3 h-3 rounded-full bg-gray-600 border-2 border-gray-900" />
+                      )}
+                      <div className="flex-1">
+                        <div className="text-sm font-semibold text-gray-300">{role.position}</div>
+                        <div className="flex flex-col md:flex-row md:items-center md:gap-2 mt-0.5">
+                          <span className="text-xs text-gray-500">{role.date}</span>
+                          {getDuration(role.date) && (
+                            <span className="text-xs text-gray-600">· {getDuration(role.date)}</span>
+                          )}
+                        </div>
+                      </div>
+
+                      {hasDetails && (
+                        <div className="shrink-0 self-center transition-transform duration-200" style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}>
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-gray-500">
+                            <polyline points="6 9 12 15 18 9" />
+                          </svg>
+                        </div>
+                      )}
+                    </div>
+
+                    {isOpen && (
+                      <ul className="list-disc pl-4 mt-3 tracking-wide text-sm text-gray-500 space-y-1">
+                        {role.details.map((detail, i) => (
+                          <li key={i}>{detail}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
           </div>
         );
       })}
@@ -102,14 +159,14 @@ const experiences = [
     position: 'Backend Engineer · SDE 1',
     company: 'Fampay',
     details: [
-  "Architected a real-time chat-based transaction system using Golang and DynamoDB, designed to handle 15M daily transactions with optimized performance: 20ms latency for transaction/mandate event ingestion, 10ms for chat screen loading, and 5ms for text message storage; implemented Valkey caching layer to reduce DynamoDB WCU/RCU costs for high-frequency conversations",
-  "Engineered a 5-microservice architecture with specialized pods for consumer events, REST APIs, task scheduling, background workers, and OpenSearch ingestion; implemented 8-node Valkey cluster with 4 masters/shards and 4 replicas for high availability",
-  "Built cost-optimized search infrastructure using OpenSearch with monthly rollover index strategy, enabling ultra-fast search across transactions and messages while reducing Amazon Search OCU costs by 60% through read-only historical indexes and active current-month ingestion",
-  "Developed comprehensive data pipeline: DynamoDB Streams → Lambda → Kafka → OpenSearch-ingestion-consumer → AWS OpenSearch, ensuring real-time search capabilities with change data capture for seamless data flow",
-  "Implemented UPI TPAP features including bank-to-bank self-transfer and UPI Delegate functionality, enabling 7M daily transacting users to utilize secondary payment accounts without bank requirements, significantly expanding platform accessibility",
-  "Led technical mentorship of 2 interns while building automated rewards expiry system using PostgreSQL, achieving ₹5–7 lakhs monthly cost savings through optimized database operations and compliance automation",
-  "Established comprehensive monitoring infrastructure using Grafana dashboards tracking CPU utilization, Valkey performance, p99 latencies, and background job processing, with automated DynamoDB provisioning based on real-time metrics"
-],
+      "Architected a real-time chat-based transaction system using Golang and DynamoDB, designed to handle 15M daily transactions with optimized performance: 20ms latency for transaction/mandate event ingestion, 10ms for chat screen loading, and 5ms for text message storage; implemented Valkey caching layer to reduce DynamoDB WCU/RCU costs for high-frequency conversations",
+      "Engineered a 5-microservice architecture with specialized pods for consumer events, REST APIs, task scheduling, background workers, and OpenSearch ingestion; implemented 8-node Valkey cluster with 4 masters/shards and 4 replicas for high availability",
+      "Built cost-optimized search infrastructure using OpenSearch with monthly rollover index strategy, enabling ultra-fast search across transactions and messages while reducing Amazon Search OCU costs by 60% through read-only historical indexes and active current-month ingestion",
+      "Developed comprehensive data pipeline: DynamoDB Streams → Lambda → Kafka → OpenSearch-ingestion-consumer → AWS OpenSearch, ensuring real-time search capabilities with change data capture for seamless data flow",
+      "Implemented UPI TPAP features including bank-to-bank self-transfer and UPI Delegate functionality, enabling 7M daily transacting users to utilize secondary payment accounts without bank requirements, significantly expanding platform accessibility",
+      "Led technical mentorship of 2 interns while building automated rewards expiry system using PostgreSQL, achieving ₹5–7 lakhs monthly cost savings through optimized database operations and compliance automation",
+      "Established comprehensive monitoring infrastructure using Grafana dashboards tracking CPU utilization, Valkey performance, p99 latencies, and background job processing, with automated DynamoDB provisioning based on real-time metrics"
+    ],
     date: 'July 2024 - July 2025',
     img: 'https://www.famapp.in/assets/localImages/fampayLogo.png',
     companyUrl: 'https://www.famapp.in/',

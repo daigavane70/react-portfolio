@@ -56,15 +56,13 @@ export default function Experience() {
               <div className="flex-1">
                 <div className="text-lg font-bold md:text-lg">{exp.company}</div>
                 <div className="flex flex-col justify-between md:flex-row">
-                  <div className="text-md md:text-md font-semibold text-gray-600">
-                    {exp.position}
-                  </div>
-                  <div className="font-semibold text-sm flex items-center gap-2">
-                    {exp.date}
+                  <div>
+                    <div className="text-md md:text-md font-semibold text-gray-600">{exp.position}</div>
                     {getDuration(exp.date) && (
-                      <span className="text-xs text-gray-500 font-normal">· {getDuration(exp.date)}</span>
+                      <div className="text-xs text-gray-500 mt-0.5">{getDuration(exp.date)}</div>
                     )}
                   </div>
+                  <div className="font-semibold text-sm">{exp.date}</div>
                 </div>
               </div>
 

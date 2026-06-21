@@ -50,18 +50,37 @@ function groupByCompany(list) {
 }
 
 export default function Experience() {
-  const [openKey, setOpenKey] = useState(null); // "companyIdx-roleIdx"
-
-  function toggle(key) {
-    setOpenKey(openKey === key ? null : key);
-  }
+  const [openKeys, setOpenKeys] = useState(new Set());
 
   const groups = groupByCompany(experiences);
 
+  const allKeys = groups.flatMap((g, gi) =>
+    g.roles.flatMap((r, ri) => (r.details.length > 0 ? [`${gi}-${ri}`] : []))
+  );
+  const allExpanded = allKeys.every((k) => openKeys.has(k));
+
+  function toggle(key) {
+    setOpenKeys((prev) => {
+      const next = new Set(prev);
+      next.has(key) ? next.delete(key) : next.add(key);
+      return next;
+    });
+  }
+
+  function toggleAll() {
+    setOpenKeys(allExpanded ? new Set() : new Set(allKeys));
+  }
+
   return (
     <div className="mx-auto max-w-6xl p-5 py-8 md:py-20" id="experience">
-      <div className="mb-8 md:mb-16 pb-4 text-6xl font-medium text-gray-300 md:text-left md:text-7xl">
-        Experience
+      <div className="mb-8 md:mb-16 pb-4 flex items-end justify-between">
+        <div className="text-6xl font-medium text-gray-300 md:text-7xl">Experience</div>
+        <button
+          onClick={toggleAll}
+          className="text-xs font-medium text-gray-400 hover:text-gray-600 transition-colors border border-gray-300 rounded-lg px-3 py-1.5 mb-1"
+        >
+          {allExpanded ? 'Collapse all' : 'Expand all'}
+        </button>
       </div>
 
       {groups.map((group, gi) => {
@@ -97,7 +116,7 @@ export default function Experience() {
             <div className="ml-7 border-l-2 border-gray-300 pl-5">
               {group.roles.map((role, ri) => {
                 const key = `${gi}-${ri}`;
-                const isOpen = openKey === key;
+                const isOpen = openKeys.has(key);
                 const hasDetails = role.details.length > 0;
 
                 return (

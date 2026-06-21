@@ -4,25 +4,25 @@ import BlogsData from '../assets/blogsData.json';
 
 export default function BlogsAndPublications() {
   return (
-    <div className=" relative overflow-hidden bg-black/90 text-gray-400" id="blogs">
+    <div className="relative overflow-hidden bg-slate-50" id="blogs">
       <div className=" mx-auto max-w-6xl p-5 py-8 md:py-20">
         <div className="mb-16">
           <div className="pb-4 text-6xl font-medium text-gray-300 md:text-left md:text-7xl">
             Blogs &amp; Publications
           </div>
-          <div>Check out my informative blog posts and research papers.</div>
+          <div className="text-gray-500">Check out my informative blog posts and research papers.</div>
         </div>
         <div className="grid gap-8 md:grid-cols-2">
           {BlogsData.map((blog, index) => (
             <div
-              className="duration-30 group border-l border-gray-400 p-2 px-2 text-xs transition ease-in-out hover:bg-gray-600/10 hover:text-white"
+              className="group border-l border-gray-300 p-2 px-2 text-xs transition ease-in-out hover:bg-gray-100"
               key={`blogs${index}`}
             >
-              <div className="text-lg font-bold text-green-500 group-hover:text-green-600">
+              <div className="text-lg font-bold text-green-600 group-hover:text-green-700">
                 {blog.title}
               </div>
-              <div>{blog.shortDescription}</div>
-              <div className="mt-2 font-bold text-gray-200">
+              <div className="text-gray-500">{blog.shortDescription}</div>
+              <div className="mt-2 font-bold text-gray-700">
                 <div className="space-x-2">
                   {blog.links.map((link, index) =>
                     blog.isPublication ? (

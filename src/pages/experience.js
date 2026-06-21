@@ -73,11 +73,11 @@ export default function Experience() {
 
   return (
     <div className="mx-auto max-w-6xl p-5 py-8 md:py-20" id="experience">
-      <div className="mb-8 md:mb-16 pb-4">
+      <div className="mb-8 md:mb-16 pb-4 md:flex md:items-end md:justify-between">
         <div className="text-6xl font-medium text-gray-300 md:text-7xl">Experience</div>
         <button
           onClick={toggleAll}
-          className="mt-4 text-xs font-medium text-gray-400 hover:text-gray-600 transition-colors border border-gray-300 rounded-lg px-3 py-1.5"
+          className="mt-4 md:mt-0 text-xs font-medium text-gray-400 hover:text-gray-600 transition-colors border border-gray-300 rounded-lg px-3 py-1.5"
         >
           {allExpanded ? 'Collapse all' : 'Expand all'}
         </button>
